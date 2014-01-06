@@ -125,9 +125,10 @@ class MercadoBitcoin(object):
         conn.request("POST", "/tapi/", urllib.urlencode(defaults), headers)
 
         response = conn.getresponse()
+        response = json.load(response)
         conn.close()
 
-        return json.load(response)
+        return response
 
     def __signature(self, method, tonce):
         signature = hmac.new(self.code, digestmod=hashlib.sha512)
