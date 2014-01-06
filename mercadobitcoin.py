@@ -106,7 +106,7 @@ class MercadoBitcoin(object):
             raise MercadoBitcoinError(response['error'])
 
     def __get_api(self, action):
-        return json.load(urllib2.urlopen("%s/api/%s" % (self.base_url, action)))
+        return json.load(urllib2.urlopen("https://%s/api/%s" % (self.base_url, action)))
 
     def __post_tapi(self, method, params={}):
         defaults = {
