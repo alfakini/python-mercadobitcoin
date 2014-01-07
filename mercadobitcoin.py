@@ -106,7 +106,7 @@ class MercadoBitcoin(object):
             raise MercadoBitcoinError(response['error'])
 
     def __get_api(self, action):
-        return json.load(urllib2.urlopen("%s/api/%s" % (self.base_url, action)))
+        return json.load(urllib2.urlopen("https://%s/api/%s" % (self.base_url, action)))
 
     def __post_tapi(self, method, params={}):
         defaults = {
@@ -125,9 +125,10 @@ class MercadoBitcoin(object):
         conn.request("POST", "/tapi/", urllib.urlencode(defaults), headers)
 
         response = conn.getresponse()
+        response = json.load(response)
         conn.close()
 
-        return json.load(response)
+        return response
 
     def __signature(self, method, tonce):
         signature = hmac.new(self.code, digestmod=hashlib.sha512)
