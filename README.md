@@ -1,11 +1,31 @@
-python-mercadobitcoin
-=====================
+# mercadobitcoin
 
 [![Join the chat at https://gitter.im/python-mercadobitcoin/Lobby](https://badges.gitter.im/python-mercadobitcoin/Lobby.svg)](https://gitter.im/python-mercadobitcoin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/alfakini/python-mercadobitcoin.svg?branch=master)](https://travis-ci.org/alfakini/python-mercadobitcoin)
 
-A Python wrapper for Mercado Bitcoin API
+A Python wrapper for Mercado Bitcoin API.
 
+## Installation
+
+Directly from [PyPI](https://pypi.python.org/pypi/mercadobitcoin):
+
+```bash
+pip install mercadobitcoin
 ```
+
+You can also install directly from the GitHub repository to have the newest features by running:
+
+```bash
+git clone https://github.com/alfakini/python-mercadobitcoin.git
+cd python-mercadobitcoin
+python setup.py install
+```
+
+## Basic Usage
+
+```python
+from mercadobitcoin import MercadoBitcoin
+
 mbtc = MercadoBitcoin()
 mbtc.ticker()
 mbtc.orderbook()
@@ -16,8 +36,10 @@ mbtc.trades_litecoin()
 mbtc.info()
 ```
 
-```
-mbtc = MercadoBitcoin(api_key, api_code, pin)
+```python
+from mercadobitcoin import MercadoBitcoin
+
+mbtc = MercadoBitcoin(<API_KEY>, <API_CODE>, <PIN>)
 
 mbtc.order_list({
     'pair': 'btc_brl',
@@ -37,6 +59,22 @@ mbtc.cancel_order({
     'order_id': 42
 }) # pair, order_id
 ```
+
+## Development
+
+Install development dependencies:
+
+```bash
+pip install -r requirements-development.txt
+```
+
+Run tests:
+
+```bash
+tox
+```
+
+## References
 
 * http://www.mercadobitcoin.com.br/api/
 * http://www.mercadobitcoin.com.br/tapi/configuracoes/#tab2

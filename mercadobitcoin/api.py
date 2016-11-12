@@ -1,6 +1,15 @@
 import urllib
-import urllib2
-import httplib
+
+try:
+    import urllib.request as urllib2
+except ImportError:
+    import urllib2
+
+try:
+    import http.client as httplib
+except ImportError:
+    import httplib
+
 import json
 import time
 import hashlib

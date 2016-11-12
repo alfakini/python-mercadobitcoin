@@ -1,0 +1,8 @@
+-r requirements.txt
+
+# Test tools
+coverage
+nose
+pylint
+yanc
+tox
