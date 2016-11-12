@@ -1,6 +1,8 @@
 python-mercadobitcoin
 =====================
 
+[![Join the chat at https://gitter.im/python-mercadobitcoin/Lobby](https://badges.gitter.im/python-mercadobitcoin/Lobby.svg)](https://gitter.im/python-mercadobitcoin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A Python wrapper for Mercado Bitcoin API
 
 ```
