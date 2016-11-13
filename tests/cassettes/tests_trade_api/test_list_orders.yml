@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: tapi_method=list_orders&tapi_nonce=1479059117&coin_pair=BRLBTC
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['62']
+      Content-Type: [application/x-www-form-urlencoded]
+      TAPI-ID: 42
+      TAPI-MAC: [42]
+      User-Agent: [python-requests/2.11.1]
+    method: POST
+    uri: https://www.mercadobitcoin.net/tapi/v3/
+  response:
+    body: {string: '{"response_data": {"orders": [{"order_id": 1, "coin_pair":
+        "BRLBTC", "order_type": 2, "status": 2, "has_fills": false, "quantity": "1.00000000",
+        "limit_price": "5000.00000", "executed_quantity": "0.00000000", "executed_price_avg":
+        "0.00000", "fee": "0.00000000", "created_timestamp": "1479052430", "updated_timestamp":
+        "1479052430", "operations": []}, {"order_id": 2, "coin_pair": "BRLBTC",
+        "order_type": 1, "status": 4, "has_fills": true, "quantity": "1.00000000",
+        "limit_price": "5000.00000", "executed_quantity": "1.00000000", "executed_price_avg":
+        "5000.00000", "fee": "0.0666", "created_timestamp": "1385380619", "updated_timestamp":
+        "1385380619", "operations": [{"operation_id": 1, "quantity": "1.00000000",
+        "price": "5000.00000", "fee_rate": "0.666", "executed_timestamp": "1385380619"}]}]},
+        "status_code": 100, "server_unix_timestamp": "1479039118"}'}
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Sun, 13 Nov 2016 17:45:18 GMT']
+      Server: [Apache]
+      Set-Cookie: ['visid_incap_619276=Ss1loTcKS5abfljpL1qGbK2mKFgAAAAAQUIPAAAAAAAcOiAmLEz8LrcF24h0iOn7;
+          expires=Mon, 13 Nov 2017 13:43:41 GMT; path=/; Domain=.mercadobitcoin.net',
+        nlbi_619276=AUZCXuTtvhNFWK8U+vqauAAAAAA3lx2dZUltjh1i/klUN9IV; path=/; Domain=.mercadobitcoin.net,
+        incap_ses_468_619276=LUz6Ll6lCE0NMN/Os6t+Bq2mKFgAAAAA7hji9NPveSTCoyAcvyBvtg==;
+          path=/; Domain=.mercadobitcoin.net, ___utmvmKEulzpm=drWoSicdusL; path=/;
+          Max-Age=900, "___utmvaKEulzpm=FOz\x01wJUq; path=/; Max-Age=900", "___utmvbKEulzpm=iZj\r\
+          \n    XtdOEalW: ZtT; path=/; Max-Age=900"]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Transfer-Encoding: [chunked]
+      Vary: [Cookie]
+      X-CDN: [Incapsula]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Iinfo: [9-38838885-38838997 NNNN CT(92 92 0) RT(1479059116871 642) q(0 0 1
+          -1) r(3 3) U6]
+      content-length: ['3091']
+    status: {code: 200, message: OK}
+version: 1

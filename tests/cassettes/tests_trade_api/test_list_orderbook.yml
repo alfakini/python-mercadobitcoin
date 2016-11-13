@@ -1,0 +1,46 @@
+interactions:
+- request:
+    body: tapi_nonce=1479039796&tapi_method=list_orderbook&coin_pair=BRLBTC
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['65']
+      Content-Type: [application/x-www-form-urlencoded]
+      TAPI-ID: "42"
+      TAPI-MAC: [42]
+      User-Agent: [python-requests/2.11.1]
+    method: POST
+    uri: https://www.mercadobitcoin.net/tapi/v3/
+  response:
+    body: {string: '{"response_data": {"orderbook": {"bids": [{"order_id": 1,
+        "quantity": "1.00000000", "limit_price": "5000.00000", "is_owner": false},
+        {"order_id": 2, "quantity": "0.50000000", "limit_price": "5000.00000",
+        "is_owner": false}], "asks": [{"order_id": 3, "quantity": "1.50000000",
+        "limit_price": "5000.00000", "is_owner": false}, {"order_id": 20275623,
+        "quantity": "5.19527422", "limit_price": "2467.00000", "is_owner": false},
+        {"order_id": 4, "quantity": "1.50000000", "limit_price": "5000.00000",
+        "is_owner": false}], "latest_order_id": 42}}, "status_code": 100,
+        "server_unix_timestamp": "1479039808"}'}
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Sun, 13 Nov 2016 17:56:39 GMT']
+      Server: [Apache]
+      Set-Cookie: ['visid_incap_619276=hTyCgETmRVaOpvkGOSs09FapKFgAAAAAQUIPAAAAAABRI1hOg6pW5V5xlh2XwUfb;
+          expires=Mon, 13 Nov 2017 13:43:25 GMT; path=/; Domain=.mercadobitcoin.net',
+        nlbi_619276=+d3rQq6QYSQ6SM8t+vqauAAAAAAaTtg3Aw3w2LAkkBKKwg+B; path=/; Domain=.mercadobitcoin.net,
+        incap_ses_468_619276=Lk0RHpwGlTqRMeHOs6t+Bl+pKFgAAAAA7eReSbsBK6au5wo7d9jFDg==;
+          path=/; Domain=.mercadobitcoin.net, ___utmvmKEulzpm=TNLYFfdQpoj; path=/;
+          Max-Age=900, "___utmvaKEulzpm=sJU\x01OWGs; path=/; Max-Age=900", "___utmvbKEulzpm=sZQ\r\
+          \n    XKdOHalc: Rto; path=/; Max-Age=900"]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Transfer-Encoding: [chunked]
+      Vary: [Cookie]
+      X-CDN: [Incapsula]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Iinfo: [10-47181296-47181593 NNNN CT(105 215 0) RT(1479059797010 1345) q(0
+          0 3 0) r(95 95) U6]
+      content-length: ['4062']
+    status: {code: 200, message: OK}
+version: 1

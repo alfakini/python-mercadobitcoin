@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: order_id=1&tapi_nonce=1479031662&tapi_method=cancel_order&coin_pair=BRLBTC
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['81']
+      Content-Type: [application/x-www-form-urlencoded]
+      TAPI-ID: "42"
+      TAPI-MAC: [42]
+      User-Agent: [python-requests/2.11.1]
+    method: POST
+    uri: https://www.mercadobitcoin.net/tapi/v3/
+  response:
+    body: {string: '{"response_data": {"order": {"order_id": 1, "coin_pair":
+        "BRLBTC", "order_type": 1, "status": 3, "has_fills": false, "quantity": "42.0000000",
+        "limit_price": "5000.00000", "executed_quantity": "0.00000000", "executed_price_avg":
+        "0.00000", "fee": "0.00000000", "created_timestamp": "1479031422", "updated_timestamp":
+        "1479031663", "operations": []}}, "status_code": 100, "server_unix_timestamp":
+        "1479031663"}'}
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Sun, 13 Nov 2016 18:27:43 GMT']
+      Server: [Apache]
+      Set-Cookie: ['visid_incap_619276=ZyuGZbMCSL60q1/Lbntb25+wKFgAAAAAQUIPAAAAAACQtOkUr+fSMUlltJ5bKif2;
+          expires=Mon, 13 Nov 2017 13:43:25 GMT; path=/; Domain=.mercadobitcoin.net',
+        nlbi_619276=jj4oMaBrLDE1JCXQ+vqauAAAAADy78sUcs1bIYJMKjfQjipz; path=/; Domain=.mercadobitcoin.net,
+        incap_ses_468_619276=XVGdZffMVlaReubOs6t+Bp+wKFgAAAAAdrcwWpDAdRt5FN+l8FVfqw==;
+          path=/; Domain=.mercadobitcoin.net, ___utmvmKEulzpm=fXVuOQbNsSG; path=/;
+          Max-Age=900, "___utmvaKEulzpm=Ttn\x01YLYP; path=/; Max-Age=900", "___utmvbKEulzpm=xZF\r\
+          \n    XEOOUals: Wtx; path=/; Max-Age=900"]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Transfer-Encoding: [chunked]
+      Vary: [Cookie]
+      X-CDN: [Incapsula]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Iinfo: [10-47504237-47504323 NNNN CT(92 94 0) RT(1479061662512 783) q(0 0
+          2 -1) r(4 4) U6]
+      content-length: ['416']
+    status: {code: 200, message: OK}
+version: 1

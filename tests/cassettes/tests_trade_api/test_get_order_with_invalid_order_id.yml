@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: tapi_method=get_order&coin_pair=BRLBTC&tapi_nonce=1479059035&order_id=0
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['71']
+      Content-Type: [application/x-www-form-urlencoded]
+      TAPI-ID: "42"
+      TAPI-MAC: [42]
+      User-Agent: [python-requests/2.11.1]
+    method: POST
+    uri: https://www.mercadobitcoin.net/tapi/v3/
+  response:
+    body: {string: '{"status_code": 206, "error_message": "Valor de *order_id* deve
+        ser um n\u00famero inteiro.", "server_unix_timestamp": "1479059035"}'}
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Sun, 13 Nov 2016 17:43:55 GMT']
+      Server: [Apache]
+      Set-Cookie: ['visid_incap_619276=W2u2bostQLit2O2I8lbcolumKFgAAAAAQUIPAAAAAACdUNTmreFgfXqVYoZlsccq;
+          expires=Mon, 13 Nov 2017 13:43:41 GMT; path=/; Domain=.mercadobitcoin.net',
+        nlbi_619276=HmRFGmcnjkAzR85Q+vqauAAAAAC14KDYQKA7W0jsUUXQZB8c; path=/; Domain=.mercadobitcoin.net,
+        incap_ses_468_619276=CED+atJJklmr8t7Os6t+BlumKFgAAAAAJxLCdskAWnGZHiq7064ruQ==;
+          path=/; Domain=.mercadobitcoin.net, ___utmvmKEulzpm=LyVazNDREho; path=/;
+          Max-Age=900, "___utmvaKEulzpm=UhW\x01Luus; path=/; Max-Age=900", "___utmvbKEulzpm=ZZz\r\
+          \n    XbbOhalt: ktC; path=/; Max-Age=900"]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Transfer-Encoding: [chunked]
+      Vary: [Cookie]
+      X-CDN: [Incapsula]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Iinfo: [8-31940173-31940208 NNNN CT(89 90 0) RT(1479059034702 321) q(0 0 2
+          -1) r(3 3) U6]
+      content-length: ['132']
+    status: {code: 200, message: OK}
+version: 1
