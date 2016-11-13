@@ -4,8 +4,8 @@ python:
   - "2.7"
   - "3.5"
 install:
-  - pip install -r requirements.txt
+  - pip install -r requirements-development.txt
   - pip install codeclimate-test-reporter
 script:
-  coverage erase && nosetests -dsv --with-yanc --with-coverage --cover-package mercadobitcoin
-  codeclimate-test-reporter
+  - coverage erase && nosetests -dsv --with-yanc --with-coverage --cover-package mercadobitcoin
+  - codeclimate-test-reporter
