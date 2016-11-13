@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: tapi_method=get_account_info&tapi_nonce=1479058647
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['50']
+      Content-Type: [application/x-www-form-urlencoded]
+      TAPI-ID: "42"
+      TAPI-MAC: [42]
+      User-Agent: [python-requests/2.11.1]
+    method: POST
+    uri: https://www.mercadobitcoin.net/tapi/v3/
+  response:
+    body: {string: '{"response_data": {"balance": {"brl": {"available": "42.00000000",
+        "total": "42.00000000"}, "btc": {"available": "42.00000000", "total": "42.00000000",
+        "amount_open_orders": 1}, "ltc": {"available": "0.00000000", "total": "0.00000000",
+        "amount_open_orders": 0}}, "withdrawal_limits": {"brl": {"available": "20000.00",
+        "total": "20000.00"}, "btc": {"available": "42.00000000", "total": "42.00000000"},
+        "ltc": {"available": "500.00000000", "total": "500.00000000"}}}, "status_code":
+        100, "server_unix_timestamp": "1479058647"}'}
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Sun, 13 Nov 2016 17:37:27 GMT']
+      Server: [Apache]
+      Set-Cookie: ['visid_incap_619276=7d6BdDw9S3mBErq9iJ41hdekKFgAAAAAQUIPAAAAAAAH/ViiNYhHLBKphvMVXpZK;
+          expires=Mon, 13 Nov 2017 13:43:25 GMT; path=/; Domain=.mercadobitcoin.net',
+        nlbi_619276=hCw5VpcwOV/rQsPs+vqauAAAAAAtb+lTpnB79ttbKbhvTHu+; path=/; Domain=.mercadobitcoin.net,
+        incap_ses_468_619276=9GF+Xg/tT1HK1t3Os6t+BtekKFgAAAAAOS0wh/qzWRHoOhoXnvafVQ==;
+          path=/; Domain=.mercadobitcoin.net, ___utmvmKEulzpm=QvOAwPKzcgN; path=/;
+          Max-Age=900, "___utmvaKEulzpm=YHg\x01uIlJ; path=/; Max-Age=900", "___utmvbKEulzpm=fZc\r\
+          \n    XgjOKalj: str; path=/; Max-Age=900"]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Transfer-Encoding: [chunked]
+      Vary: [Cookie]
+      X-CDN: [Incapsula]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Iinfo: [10-46981234-46981335 NNNN CT(89 89 0) RT(1479058646678 622) q(0 0
+          1 -1) r(3 3) U6]
+      content-length: ['514']
+    status: {code: 200, message: OK}
+version: 1

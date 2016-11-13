@@ -6,3 +6,5 @@ nose
 pylint
 yanc
 tox
+pyyaml
+vcrpy

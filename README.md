@@ -26,41 +26,36 @@ python setup.py install
 
 ## Basic Usage
 
-```python
-from mercadobitcoin import MercadoBitcoin
+Below you can see the available Mercado Bitcoin API methods you can use:
 
-mbtc = MercadoBitcoin()
+```python
+import mercadobitcoin
+mbtc = mercadobitcoin.Api()
 mbtc.ticker()
 mbtc.orderbook()
 mbtc.trades()
 mbtc.ticker_litecoin()
 mbtc.orderbook_litecoin()
 mbtc.trades_litecoin()
-mbtc.info()
 ```
 
+And the private Trade API:
+
 ```python
-from mercadobitcoin import MercadoBitcoin
+from mercadobitcoin import TradeApi
 
-mbtc = MercadoBitcoin(<API_KEY>, <API_CODE>, <PIN>)
+mbtc = TradeApi(<API_ID>, <API_SECRET>)
 
-mbtc.order_list({
-    'pair': 'btc_brl',
-    'type': 'buy',
-    'status': 'active'
-}) # pair, type, status, from_id, end_id, since
-
-mbtc.trade({
-    'pair': 'btc_brl',
-    'type': 'buy',
-    'volume': 3.4,
-    'price': 2300.99
-}) # pair, type, volume, price
-
-mbtc.cancel_order({
-    'pair': 'btc_brl',
-    'order_id': 42
-}) # pair, order_id
+mbtc.list_system_messages()
+mbtc.get_account_info()
+mbtc.get_order(coin_pair="BRLBTC", order_id=1)
+mbtc.list_orders(coin_pair="BRLBTC")
+mbtc.list_orderbook(coin_pair="BRLBTC")
+mbtc.place_buy_order(coin_pair="BRLBTC", quantity="42.00", limit_price="5000")
+mbtc.place_sell_order(coin_pair="BRLBTC", quantity="42.00", limit_price="5000")
+mbtc.cancel_order(coin_pair="BRLBTC", order_id=1)
+mbtc.get_withdrawal(coin="BRL", withdrawal_id=1)
+mbtc.withdraw_coin(coin_pair="BRL", quantity="42", destiny="1", description="Trasfering Money.")
 ```
 
 ## Development
@@ -68,6 +63,7 @@ mbtc.cancel_order({
 Install development dependencies:
 
 ```bash
+brew install libyaml
 pip install -r requirements-development.txt
 ```
 
@@ -79,5 +75,5 @@ tox
 
 ## References
 
-* http://www.mercadobitcoin.com.br/api/
-* http://www.mercadobitcoin.com.br/tapi/configuracoes/#tab2
+* [Mercado Bitcoin public data API](https://www.mercadobitcoin.com.br/api-doc)
+* [Mercado Bitcoin private trade API](https://www.mercadobitcoin.com.br/trade-api)

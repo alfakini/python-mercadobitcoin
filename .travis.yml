@@ -3,8 +3,9 @@ language: python
 python:
   - "2.7"
   - "3.5"
-  - "nightly"
 install:
   - pip install -r requirements.txt
-  - pip install tox-travis coveralls
-script: tox
+  - pip install tox-travis codeclimate-test-reporter
+script:
+  tox
+  codeclimate-test-reporter

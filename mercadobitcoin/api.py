@@ -1,148 +1,49 @@
-import urllib
+import requests
 
-try:
-    import urllib.request as urllib2
-except ImportError:
-    import urllib2
+class Base(object):
+    """Base API Class"""
 
-try:
-    import http.client as httplib
-except ImportError:
-    import httplib
+    def __init__(self):
+        self.host = "www.mercadobitcoin.net"
 
-import json
-import time
-import hashlib
-import hmac
-import itertools
 
-__author__ = "alf."
-__version__ = "0.1"
+    def get_api(self, action):
+        """Returns api json for requested action.
 
-def check_required(params, required):
-    for param in required:
-        if param not in params:
-            raise MercadoBitcoinError(u'Parameter %s is required' % param)
+        param action: The requested API action
+        """
+        response = requests.get("https://%s/api/%s" % (self.host, action))
+        return response.json()
 
-def check_values(defaults, options):
-    keys = itertools.chain(options.keys())
-    for param, value in defaults.items():
-        if param not in keys:
-            continue
-        if value not in options[param]:
-            raise MercadoBitcoinError(u'Valor do %s invalido' % param)
 
-class MercadoBitcoinError(Exception):
-    def __init__(self, error):
-        self.error =error
-
-    def __str__(self):
-        return repr(self.error)
-
-class MercadoBitcoin(object):
-    def __init__(self, key=None, code=None, pin=None):
-        self.base_url = "www.mercadobitcoin.com.br"
-        self.key = key
-        self.code = code
-        self.pin = str(pin)
+class Api(Base):
+    """Bitcoin and Litcoin market informations."""
 
     def ticker(self):
-        return self.__get_api('ticker')
+        """Returns informations about Bitcoin market."""
+        return self.get_api('ticker')
+
 
     def orderbook(self):
-        return self.__get_api('orderbook')
+        """Returns the Bitcoin's orderbook."""
+        return self.get_api('orderbook')
+
 
     def trades(self):
-        return self.__get_api('trades')
+        """Returns the operation list for the Bitcoin market."""
+        return self.get_api('trades')
+
 
     def ticker_litecoin(self):
-        return self.__get_api('ticker_litecoin')
+        """Return informations about Litcoin market."""
+        return self.get_api('ticker_litecoin')
+
 
     def orderbook_litecoin(self):
-        return self.__get_api('orderbook_litecoin')
+        """Returns the Litecoin's orderbook."""
+        return self.get_api('orderbook_litecoin')
+
 
     def trades_litecoin(self):
-        return self.__get_api('trades_litecoin')
-
-    def info(self):
-        return self.__check_response(self.__post_tapi('getInfo'))
-
-    def order_list(self, params={}):
-        defaults = {
-            'pair': 'btc_brl'
-        }
-        defaults.update(params)
-        check_required(defaults.keys(), ['pair'])
-        check_values(defaults, {
-            'pair': ['btc_brl', 'ltc_brl'],
-            'type': ['buy', 'sell'],
-            'status': ['active', 'canceled', 'completed']
-        })
-
-        return self.__check_response(self.__post_tapi('OrderList', defaults))
-
-    def trade(self, params={}):
-        defaults = {
-            'pair': 'btc_brl'
-        }
-        defaults.update(params)
-
-        check_required(defaults.keys(), ['pair', 'type', 'volume', 'price'])
-        check_values(defaults, {
-            'pair': ['btc_brl', 'ltc_brl'],
-            'type': ['buy', 'sell'],
-        })
-
-        return self.__check_response(self.__post_tapi('Trade', defaults))
-
-    def cancel_order(self, params={}):
-        defaults = {
-            'pair': 'btc_brl'
-        }
-        defaults.update(params)
-
-        check_required(defaults.keys(), ['pair', 'order_id'])
-        check_values(defaults, {
-            'pair': ['btc_brl', 'ltc_brl'],
-        })
-
-        return self.__check_response(self.__post_tapi('CancelOrder', defaults))
-
-    def __check_response(self, response):
-        if response['success'] == 1:
-            return response
-        else:
-            raise MercadoBitcoinError(response['error'])
-
-    def __get_api(self, action):
-        return json.load(urllib2.urlopen("https://%s/api/%s" % (self.base_url, action)))
-
-    def __post_tapi(self, method, params={}):
-        defaults = {
-            'method': method,
-            'tonce': str(int(time.time()))
-        }
-        defaults.update(params)
-
-        headers = {
-            "Content-type": "application/x-www-form-urlencoded",
-            "Key": self.key,
-            "Sign": self.__signature(method, defaults['tonce'])
-        }
-
-        conn = httplib.HTTPSConnection(self.base_url)
-        conn.request("POST", "/tapi/", urllib.urlencode(defaults), headers)
-
-        response = conn.getresponse()
-        response = json.load(response)
-        conn.close()
-
-        return response
-
-    def __signature(self, method, tonce):
-        signature = hmac.new(self.code, digestmod=hashlib.sha512)
-        signature.update(method + ':' + self.pin + ':' + tonce)
-        return signature.hexdigest()
-
-
-
+        """Returns the operation list for the Litcoin market."""
+        return self.get_api('trades_litecoin')
