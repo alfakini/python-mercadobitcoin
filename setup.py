@@ -24,6 +24,8 @@
 from distutils.core import setup
 
 
+INSTALL_REQUIREMENTS = ['requests']
+
 setup(
     name = 'mercadobitcoin',
     description = 'A Python wrapper for Mercado Bitcoin API',
@@ -34,6 +36,7 @@ setup(
     url = 'https://github.com/alfakini/python-mercadobitcoin',
     download_url = 'https://github.com/alfakini/python-mercadobitcoin/tarball/0.1',
     keywords = ['bitcoin', 'litcoin', 'mercadobitcoin', 'trade', 'orderbook'],
+    install_requires=INSTALL_REQUIREMENTS,
     classifiers = [
         'Development Status :: 4 - Beta',
         'Environment :: Console',

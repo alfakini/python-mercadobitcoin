@@ -1,0 +1,81 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.11.1]
+    method: GET
+    uri: https://www.mercadobitcoin.net/api/ticker_litecoin
+  response:
+    body: {string: ''}
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [text/html; charset=utf-8]
+      Date: ['Sun, 13 Nov 2016 17:14:09 GMT']
+      Location: ['http://www.mercadobitcoin.net/api/ticker_litecoin/']
+      Server: [Apache]
+      Set-Cookie: ['visid_incap_619276=J5ESMEDLSX+wRUgU+DUqtWCfKFgAAAAAQUIPAAAAAAAEWejJjkH+Hr9MR3ZluYvz;
+          expires=Mon, 13 Nov 2017 13:43:41 GMT; path=/; Domain=.mercadobitcoin.net',
+        nlbi_619276=PGc/L/TgVS6nLk0++vqauAAAAAAeGs6infuc0Gn+RUAl/NmF; path=/; Domain=.mercadobitcoin.net,
+        incap_ses_468_619276=jBZtZ3yWvmq47NnOs6t+BmCfKFgAAAAAbzVYUddzlEip8DAq21PaVQ==;
+          path=/; Domain=.mercadobitcoin.net, ___utmvmKEulzpm=TPKVYRUSBxL; path=/;
+          Max-Age=900, "___utmvaKEulzpm=fbn\x01vLUt; path=/; Max-Age=900", "___utmvbKEulzpm=XZC\r\
+          \n    XKLOhalm: Stq; path=/; Max-Age=900"]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Vary: [Accept-Encoding]
+      X-CDN: [Incapsula]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Iinfo: [9-38569019-38569184 NNNN CT(87 88 0) RT(1479057247596 943) q(0 0 2
+          -1) r(3 3) U11]
+      content-length: ['0']
+    status: {code: 301, message: MOVED PERMANENTLY}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Cookie: ["visid_incap_619276=J5ESMEDLSX+wRUgU+DUqtWCfKFgAAAAAQUIPAAAAAAAEWejJjkH+Hr9MR3ZluYvz;\
+          \ incap_ses_468_619276=jBZtZ3yWvmq47NnOs6t+BmCfKFgAAAAAbzVYUddzlEip8DAq21PaVQ==;\
+          \ nlbi_619276=PGc/L/TgVS6nLk0++vqauAAAAAAeGs6infuc0Gn+RUAl/NmF; ___utmvaKEulzpm=fbn\x01\
+          vLUt; ___utmvmKEulzpm=TPKVYRUSBxL; ___utmvbKEulzpm=XZC\r\n    XKLOhalm:\
+          \ Stq"]
+      User-Agent: [python-requests/2.11.1]
+    method: GET
+    uri: http://www.mercadobitcoin.net/api/ticker_litecoin/
+  response:
+    body: {string: ''}
+    headers:
+      Connection: [close]
+      Content-Length: ['0']
+      Location: ['https://www.mercadobitcoin.net/api/ticker_litecoin/']
+    status: {code: 301, message: Moved Permanently}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Cookie: ["visid_incap_619276=J5ESMEDLSX+wRUgU+DUqtWCfKFgAAAAAQUIPAAAAAAAEWejJjkH+Hr9MR3ZluYvz;\
+          \ nlbi_619276=PGc/L/TgVS6nLk0++vqauAAAAAAeGs6infuc0Gn+RUAl/NmF; incap_ses_468_619276=jBZtZ3yWvmq47NnOs6t+BmCfKFgAAAAAbzVYUddzlEip8DAq21PaVQ==;\
+          \ ___utmvaKEulzpm=fbn\x01vLUt; ___utmvmKEulzpm=TPKVYRUSBxL; ___utmvbKEulzpm=XZC\r\
+          \n    XKLOhalm: Stq"]
+      User-Agent: [python-requests/2.11.1]
+    method: GET
+    uri: https://www.mercadobitcoin.net/api/ticker_litecoin/
+  response:
+    body: {string: '{"ticker":{"high":13.15000000,"low":12.80000000,"vol":79.43329759,"last":13.14800000,"buy":12.80000000,"sell":13.14800000,"date":1479055531}}
+
+        '}
+    headers:
+      Content-Type: [text/html; charset=utf-8]
+      Date: ['Sun, 13 Nov 2016 17:14:09 GMT']
+      Etag: ['"da51c3e9"']
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      X-CDN: [Incapsula]
+      X-Iinfo: [9-38569019-0 0CNN RT(1479057247596 2243) q(0 -1 -1 1) r(0 -1)]
+      content-length: ['142']
+    status: {code: 200, message: OK}
+version: 1

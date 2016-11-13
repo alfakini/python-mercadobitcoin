@@ -26,41 +26,17 @@ python setup.py install
 
 ## Basic Usage
 
-```python
-from mercadobitcoin import MercadoBitcoin
+Below you can see the available Mercado Bitcoin API methods you can use:
 
-mbtc = MercadoBitcoin()
+```python
+import mercadobitcoin
+mbtc = mercadobitcoin.Api()
 mbtc.ticker()
 mbtc.orderbook()
 mbtc.trades()
 mbtc.ticker_litecoin()
 mbtc.orderbook_litecoin()
 mbtc.trades_litecoin()
-mbtc.info()
-```
-
-```python
-from mercadobitcoin import MercadoBitcoin
-
-mbtc = MercadoBitcoin(<API_KEY>, <API_CODE>, <PIN>)
-
-mbtc.order_list({
-    'pair': 'btc_brl',
-    'type': 'buy',
-    'status': 'active'
-}) # pair, type, status, from_id, end_id, since
-
-mbtc.trade({
-    'pair': 'btc_brl',
-    'type': 'buy',
-    'volume': 3.4,
-    'price': 2300.99
-}) # pair, type, volume, price
-
-mbtc.cancel_order({
-    'pair': 'btc_brl',
-    'order_id': 42
-}) # pair, order_id
 ```
 
 ## Development
@@ -68,6 +44,7 @@ mbtc.cancel_order({
 Install development dependencies:
 
 ```bash
+brew install libyaml
 pip install -r requirements-development.txt
 ```
 
