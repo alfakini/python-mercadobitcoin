@@ -39,6 +39,25 @@ mbtc.orderbook_litecoin()
 mbtc.trades_litecoin()
 ```
 
+And the private Trade API:
+
+```python
+from mercadobitcoin import TradeApi
+
+mbtc = TradeApi(<API_ID>, <API_SECRET>)
+
+mbtc.list_system_messages()
+mbtc.get_account_info()
+mbtc.get_order(coin_pair="BRLBTC", order_id=1)
+mbtc.list_orders(coin_pair="BRLBTC")
+mbtc.list_orderbook(coin_pair="BRLBTC")
+mbtc.place_buy_order(coin_pair="BRLBTC", quantity="42.00", limit_price="5000")
+mbtc.place_sell_order(coin_pair="BRLBTC", quantity="42.00", limit_price="5000")
+mbtc.cancel_order(coin_pair="BRLBTC", order_id=1)
+mbtc.get_withdrawal(coin="BRL", withdrawal_id=1)
+mbtc.withdraw_coin(coin_pair="BRL", quantity="42", destiny="1", description="Trasfering Money.")
+```
+
 ## Development
 
 Install development dependencies:
@@ -56,5 +75,5 @@ tox
 
 ## References
 
-* http://www.mercadobitcoin.com.br/api/
-* http://www.mercadobitcoin.com.br/tapi/configuracoes/#tab2
+* [Mercado Bitcoin public data API](https://www.mercadobitcoin.com.br/api-doc)
+* [Mercado Bitcoin private trade API](https://www.mercadobitcoin.com.br/trade-api)
