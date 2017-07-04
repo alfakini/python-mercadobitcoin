@@ -124,9 +124,8 @@ class TradeApi(Base):
 
 
     def __post_tapi(self, method, params={}):
-        payload = { "tapi_method": method, "tapi_nonce": str(int(time.time())) }
+        payload = { "tapi_method": method, "tapi_nonce": str(int(time.time()) * 1000) }
         payload.update(params)
-
         headers = {
             "Content-Type": "application/x-www-form-urlencoded",
             "TAPI-ID": self.id,
@@ -138,7 +137,7 @@ class TradeApi(Base):
 
 
     def __signature(self, payload):
-        signature = hmac.new(self.secret, digestmod=hashlib.sha512)
+        signature = hmac.new(self.secret.encode('utf-8'), digestmod=hashlib.sha512)
         params = self.path + '?' + urlencode(payload)
         signature.update(params.encode('utf-8'))
         return signature.hexdigest()
