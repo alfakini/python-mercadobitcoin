@@ -12,7 +12,7 @@ class Base(object):
 
         param action: The requested API action
         """
-        response = requests.get("https://%s/api/%s" % (self.host, action))
+        response = requests.get("https://%s/api/%s/" % (self.host, action))
         return response.json()
 
 
