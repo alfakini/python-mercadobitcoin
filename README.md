@@ -5,6 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/alfakini/python-mercadobitcoin/badges/gpa.svg)](https://codeclimate.com/github/alfakini/python-mercadobitcoin)
 [![Test Coverage](https://codeclimate.com/github/alfakini/python-mercadobitcoin/badges/coverage.svg)](https://codeclimate.com/github/alfakini/python-mercadobitcoin/coverage)
 [![PyPI](https://img.shields.io/pypi/v/mercadobitcoin.svg)](https://pypi.python.org/pypi/mercadobitcoin)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falfakini%2Fpython-mercadobitcoin.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falfakini%2Fpython-mercadobitcoin?ref=badge_shield)
 
 A Python wrapper for Mercado Bitcoin API.
 
@@ -77,3 +78,7 @@ tox
 
 * [Mercado Bitcoin public data API](https://www.mercadobitcoin.com.br/api-doc)
 * [Mercado Bitcoin private trade API](https://www.mercadobitcoin.com.br/trade-api)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falfakini%2Fpython-mercadobitcoin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falfakini%2Fpython-mercadobitcoin?ref=badge_large)
