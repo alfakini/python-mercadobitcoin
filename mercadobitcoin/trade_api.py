@@ -124,7 +124,7 @@ class TradeApi(Base):
 
 
     def __post_tapi(self, method, params={}):
-        payload = { "tapi_method": method, "tapi_nonce": str(int(time.time())) }
+        payload = { "tapi_method": method, "tapi_nonce": str(int(time.time()*1000000))}
         payload.update(params)
 
         headers = {
