@@ -3,6 +3,7 @@
 [![Join the chat at https://gitter.im/python-mercadobitcoin/Lobby](https://badges.gitter.im/python-mercadobitcoin/Lobby.svg)](https://gitter.im/python-mercadobitcoin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/alfakini/python-mercadobitcoin.svg?branch=master)](https://travis-ci.org/alfakini/python-mercadobitcoin)
 [![PyPI](https://img.shields.io/pypi/v/mercadobitcoin.svg)](https://pypi.python.org/pypi/mercadobitcoin)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falfakini%2Fpython-mercadobitcoin.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falfakini%2Fpython-mercadobitcoin?ref=badge_shield)
 
 A Python wrapper for Mercado Bitcoin API.
 
@@ -75,3 +76,7 @@ tox
 
 * [Mercado Bitcoin public data API](https://www.mercadobitcoin.com.br/api-doc)
 * [Mercado Bitcoin private trade API](https://www.mercadobitcoin.com.br/trade-api)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falfakini%2Fpython-mercadobitcoin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falfakini%2Fpython-mercadobitcoin?ref=badge_large)
