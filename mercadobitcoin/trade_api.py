@@ -63,56 +63,56 @@ class TradeApi(Base):
     def get_order(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#get_order"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH"], "order_id": int })
+        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP"], "order_id": int })
         return self.__check_response(self.__post_tapi("get_order", kwargs))
 
 
     def list_orders(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#list_orders"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH"] }, { "order_type": [1, 2], "status_list": str, "has_fills": [True, False], "from_id": int, "to_id": int, "from_timestamp": str, "to_timestamp": str })
+        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP"] }, { "order_type": [1, 2], "status_list": str, "has_fills": [True, False], "from_id": int, "to_id": int, "from_timestamp": str, "to_timestamp": str })
         return self.__check_response(self.__post_tapi("list_orders", kwargs ))
 
 
     def list_orderbook(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#list_orderbook"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH"] }, { "full": [True, False] })
+        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP"] }, { "full": [True, False] })
         return self.__check_response(self.__post_tapi("list_orderbook", kwargs ))
 
 
     def place_buy_order(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#place_buy_order"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH"], "quantity": str, "limit_price": str })
+        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP"], "quantity": str, "limit_price": str })
         return self.__check_response(self.__post_tapi("place_buy_order", kwargs ))
 
 
     def place_sell_order(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#place_sell_order"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH"], "quantity": str, "limit_price": str })
+        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP"], "quantity": str, "limit_price": str })
         return self.__check_response(self.__post_tapi("place_sell_order", kwargs ))
 
 
     def cancel_order(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#cancel_order"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH"], "order_id": int })
+        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP"], "order_id": int })
         return self.__check_response(self.__post_tapi("cancel_order", kwargs ))
 
 
     def get_withdrawal(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#get_withdrawal"""
 
-        check_args(kwargs, { "coin": ["BRL", "BTC", "LTC", "BCH"], "withdrawal_id": int })
+        check_args(kwargs, { "coin": ["BRL", "BTC", "LTC", "BCH", "XRP"], "withdrawal_id": int })
         return self.__check_response(self.__post_tapi("get_withdrawal", kwargs ))
 
 
     def withdraw_coin(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#withdraw_coin"""
 
-        check_args(kwargs, { "coin": ["BRL", "BTC", "LTC", "BCH"], "quantity": str, "destiny": str }, { "description": str })
+        check_args(kwargs, { "coin": ["BRL", "BTC", "LTC", "BCH", "XRP"], "quantity": str, "destiny": str }, { "description": str })
         return self.__check_response(self.__post_tapi("withdraw_coin", kwargs ))
 
 
