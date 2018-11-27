@@ -2,8 +2,6 @@
 
 [![Join the chat at https://gitter.im/python-mercadobitcoin/Lobby](https://badges.gitter.im/python-mercadobitcoin/Lobby.svg)](https://gitter.im/python-mercadobitcoin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/alfakini/python-mercadobitcoin.svg?branch=master)](https://travis-ci.org/alfakini/python-mercadobitcoin)
-[![Code Climate](https://codeclimate.com/github/alfakini/python-mercadobitcoin/badges/gpa.svg)](https://codeclimate.com/github/alfakini/python-mercadobitcoin)
-[![Test Coverage](https://codeclimate.com/github/alfakini/python-mercadobitcoin/badges/coverage.svg)](https://codeclimate.com/github/alfakini/python-mercadobitcoin/coverage)
 [![PyPI](https://img.shields.io/pypi/v/mercadobitcoin.svg)](https://pypi.python.org/pypi/mercadobitcoin)
 
 A Python wrapper for Mercado Bitcoin API.
