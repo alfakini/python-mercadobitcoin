@@ -76,7 +76,7 @@ class TradeApi(Base):
 
     def list_orderbook(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#list_orderbook"""
-
+        
         check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP", "BRLETH"] }, { "full": [True, False] })
         return self.__check_response(self.__post_tapi("list_orderbook", kwargs ))
 
