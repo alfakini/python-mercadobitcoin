@@ -1,5 +1,9 @@
 # mercadobitcoin Log of Changes
 
+## Version `0.6.0`
+
+- Add support to XRP and ETH
+
 ## Version `0.5.0`
 
 - MercadoBitcoin API V3
