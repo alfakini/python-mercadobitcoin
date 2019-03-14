@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/alfakini/python-mercadobitcoin.svg?branch=master)](https://travis-ci.org/alfakini/python-mercadobitcoin)
 [![PyPI](https://img.shields.io/pypi/v/mercadobitcoin.svg)](https://pypi.python.org/pypi/mercadobitcoin)
 
-A Python wrapper for Mercado Bitcoin API.
+A Python wrapper for Mercado Bitcoin API. Currently supports: BTC, LTC, BCH, XRP and ETH.
 
 ## Installation
 
