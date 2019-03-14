@@ -21,21 +21,20 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from distutils.core import setup
-
+from setuptools import setup
 
 INSTALL_REQUIREMENTS = ['requests']
 
 setup(
     name = 'mercadobitcoin',
     description = 'A Python wrapper for Mercado Bitcoin API',
-    version = '0.5.0',
+    version = '0.6.0',
     packages = ['mercadobitcoin'],
     author = 'Alan Fachini',
     author_email = 'alfakini@gmail.com',
     url = 'https://github.com/alfakini/python-mercadobitcoin',
-    download_url = 'https://github.com/alfakini/python-mercadobitcoin/tarball/0.5.0',
-    keywords = ['bitcoin', 'litcoin', 'mercadobitcoin', 'trade', 'orderbook'],
+    download_url = 'https://github.com/alfakini/python-mercadobitcoin/tarball/0.6.0',
+    keywords = ['bitcoin', 'litcoin', 'ethereum', 'ripple', 'mercadobitcoin', 'trade', 'orderbook'],
     install_requires=INSTALL_REQUIREMENTS,
     classifiers = [
         'Development Status :: 4 - Beta',
@@ -48,7 +47,7 @@ setup(
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities'
     ]
