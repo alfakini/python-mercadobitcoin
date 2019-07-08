@@ -109,11 +109,25 @@ class TradeApi(Base):
         return self.__check_response(self.__post_tapi("get_withdrawal", kwargs ))
 
 
+    def withdraw_coin_brl(self, **kwargs):
+        """https://www.mercadobitcoin.com.br/trade-api/#withdraw_coin"""
+
+        check_args(kwargs, { "coin": ["BRL"], "quantity": str, "account_ref": str }, { "description": str })
+        return self.__check_response(self.__post_tapi("withdraw_coin", kwargs ))
+
+
     def withdraw_coin(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#withdraw_coin"""
 
-        check_args(kwargs, { "coin": ["BRL", "BTC", "LTC", "BCH", "XRP", "ETH"], "quantity": str, "destiny": str }, { "description": str })
+        check_args(kwargs, { "coin": ["BTC", "LTC", "BCH", "ETH"], "quantity": str, "address": str, "tx_fee": str }, { "description": str })
         return self.__check_response(self.__post_tapi("withdraw_coin", kwargs ))
+
+
+    def withdraw_coin_xrp(self, **kwargs):
+        """https://www.mercadobitcoin.com.br/trade-api/#withdraw_coin"""
+
+        check_args(kwargs, { "coin": ["XRP"], "quantity": str, "address": str, "tx_fee": str, "destination_tag": int }, { "description": str })
+        return self.__check_response(self.__post_tapi("withdraw_coin", kwargs ))        
 
 
     def __check_response(self, response):
