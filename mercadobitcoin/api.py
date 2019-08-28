@@ -12,6 +12,7 @@ class Base(object):
 
         param action: The requested API action
         """
+        print("https://%s/api/%s/")
         response = requests.get("https://%s/api/%s/" % (self.host, action))
         return response.json()
 
@@ -37,6 +38,11 @@ class Api(Base):
     def ticker_litecoin(self):
         """Return informations about Litcoin market."""
         return self.get_api('ticker_litecoin')
+
+
+    def ticker_ripple(self):
+        """Return informations about Litcoin market."""
+        return self.get_api('xrp/ticker')
 
 
     def orderbook_litecoin(self):
