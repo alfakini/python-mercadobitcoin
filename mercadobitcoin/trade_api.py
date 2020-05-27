@@ -41,7 +41,6 @@ def check_args(kwargs, required_parameters, optional_parameters={}):
 
 
 class TradeApi(Base):
-
     def __init__(self, identifier=None, secret=None):
         self.id = identifier
         self.secret = secret
