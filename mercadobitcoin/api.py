@@ -39,6 +39,11 @@ class Api(Base):
         return self.get_api('ticker_litecoin')
 
 
+    def ticker_ripple(self):
+        """Return informations about Litcoin market."""
+        return self.get_api('xrp/ticker')
+
+
     def orderbook_litecoin(self):
         """Returns the Litecoin's orderbook."""
         return self.get_api('orderbook_litecoin')
