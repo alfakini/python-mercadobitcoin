@@ -13,6 +13,7 @@ except ImportError:
 from .api import Base
 from .errors import ApiError, ArgumentError
 
+
 def check_values(value, arg, arg_value):
     if type(value) == type:
         if type(arg_value) != value:
@@ -44,6 +45,7 @@ class TradeApi(Base):
         self.id = identifier
         self.secret = secret
         self.path = "/tapi/v3/"
+        self.available_pairs = ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP", "BRLETH", "BRLUSDC", "BRLMBPRK01", "BRLMBPRK02", "BRLMBPRK03", "BRLMBPRK04", "BRLMBCONS01"]
         Base.__init__(self)
 
 
@@ -63,56 +65,56 @@ class TradeApi(Base):
     def get_order(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#get_order"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP", "BRLETH"], "order_id": int })
+        check_args(kwargs, { "coin_pair": self.available_pairs, "order_id": int })
         return self.__check_response(self.__post_tapi("get_order", kwargs))
 
 
     def list_orders(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#list_orders"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP", "BRLETH"] }, { "order_type": [1, 2], "status_list": str, "has_fills": [True, False], "from_id": int, "to_id": int, "from_timestamp": str, "to_timestamp": str })
+        check_args(kwargs, { "coin_pair": self.available_pairs }, { "order_type": [1, 2], "status_list": str, "has_fills": [True, False], "from_id": int, "to_id": int, "from_timestamp": str, "to_timestamp": str })
         return self.__check_response(self.__post_tapi("list_orders", kwargs ))
 
 
     def list_orderbook(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#list_orderbook"""
         
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP", "BRLETH"] }, { "full": [True, False] })
+        check_args(kwargs, { "coin_pair": self.available_pairs }, { "full": [True, False] })
         return self.__check_response(self.__post_tapi("list_orderbook", kwargs ))
 
 
     def place_buy_order(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#place_buy_order"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP", "BRLETH"], "quantity": str, "limit_price": str })
+        check_args(kwargs, { "coin_pair": self.available_pairs, "quantity": str, "limit_price": str })
         return self.__check_response(self.__post_tapi("place_buy_order", kwargs ))
 
 
     def place_sell_order(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#place_sell_order"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP", "BRLETH"], "quantity": str, "limit_price": str })
+        check_args(kwargs, { "coin_pair": self.available_pairs, "quantity": str, "limit_price": str })
         return self.__check_response(self.__post_tapi("place_sell_order", kwargs ))
 
 
     def cancel_order(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#cancel_order"""
 
-        check_args(kwargs, { "coin_pair": ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP", "BRLETH"], "order_id": int })
+        check_args(kwargs, { "coin_pair": self.available_pairs, "order_id": int })
         return self.__check_response(self.__post_tapi("cancel_order", kwargs ))
 
 
     def get_withdrawal(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#get_withdrawal"""
 
-        check_args(kwargs, { "coin": ["BRL", "BTC", "LTC", "BCH", "XRP", "ETH"], "withdrawal_id": int })
+        check_args(kwargs, { "coin": self.available_pairs, "withdrawal_id": int })
         return self.__check_response(self.__post_tapi("get_withdrawal", kwargs ))
 
 
     def withdraw_coin(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#withdraw_coin"""
 
-        check_args(kwargs, { "coin": ["BRL", "BTC", "LTC", "BCH", "XRP", "ETH"], "quantity": str, "destiny": str }, { "description": str })
+        check_args(kwargs, { "coin": self.available_pairs, "quantity": str, "destiny": str }, { "description": str })
         return self.__check_response(self.__post_tapi("withdraw_coin", kwargs ))
 
 
