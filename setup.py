@@ -34,7 +34,7 @@ setup(
     author_email = 'alfakini@gmail.com',
     url = 'https://github.com/alfakini/python-mercadobitcoin',
     download_url = 'https://github.com/alfakini/python-mercadobitcoin/tarball/0.6.0',
-    keywords = ['bitcoin', 'litcoin', 'ethereum', 'ripple', 'mercadobitcoin', 'trade', 'orderbook'],
+    keywords = ['bitcoin', 'litecoin', 'ethereum', 'ripple', 'mercadobitcoin', 'trade', 'orderbook'],
     install_requires=INSTALL_REQUIREMENTS,
     classifiers = [
         'Development Status :: 4 - Beta',

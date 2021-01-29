@@ -79,7 +79,7 @@ class TradeApiTestCase(unittest.TestCase):
 
 
     @tests.vcr.use_cassette
-    def test_place_buy_order_with_invalid_quatity(self):
+    def test_place_buy_order_with_invalid_quantity(self):
         with self.assertRaises(ArgumentError):
             self.api.place_buy_order(coin_pair="BRLBTC", quantity=1, limit_price="42")
 

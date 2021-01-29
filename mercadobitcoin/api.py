@@ -17,7 +17,7 @@ class Base(object):
 
 
 class Api(Base):
-    """Bitcoin and Litcoin market informations."""
+    """Bitcoin and Litecoin market informations."""
 
     def ticker(self):
         """Returns informations about Bitcoin market."""
@@ -35,12 +35,12 @@ class Api(Base):
 
 
     def ticker_litecoin(self):
-        """Return informations about Litcoin market."""
+        """Return informations about Litecoin market."""
         return self.get_api('ticker_litecoin')
 
 
     def ticker_ripple(self):
-        """Return informations about Litcoin market."""
+        """Return informations about Ripple market."""
         return self.get_api('xrp/ticker')
 
 
@@ -50,5 +50,5 @@ class Api(Base):
 
 
     def trades_litecoin(self):
-        """Returns the operation list for the Litcoin market."""
+        """Returns the operation list for the Litecoin market."""
         return self.get_api('trades_litecoin')

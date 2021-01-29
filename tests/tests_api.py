@@ -41,7 +41,7 @@ class ApiTestCase(unittest.TestCase):
 
 
     @tests.vcr.use_cassette
-    def test_ticker_litcoin(self):
+    def test_ticker_litecoin(self):
         response = self.api.ticker_litecoin()
         assert 'ticker' in response
         assert 'high' in response['ticker']
