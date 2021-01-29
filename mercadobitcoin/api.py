@@ -8,7 +8,7 @@ class Base(object):
 
 
     def get_api(self, action):
-        """Returns api json for requested action.
+        """Return api JSON for the requested action.
 
         param action: The requested API action
         """
@@ -17,38 +17,38 @@ class Base(object):
 
 
 class Api(Base):
-    """Bitcoin and Litecoin market informations."""
+    """Market information for each cryptoasset."""
 
     def ticker(self):
-        """Returns informations about Bitcoin market."""
+        """Return information about Bitcoin market."""
         return self.get_api('ticker')
 
 
     def orderbook(self):
-        """Returns the Bitcoin's orderbook."""
+        """Return Bitcoin's orderbook."""
         return self.get_api('orderbook')
 
 
     def trades(self):
-        """Returns the operation list for the Bitcoin market."""
+        """Return the operation list for the Bitcoin market."""
         return self.get_api('trades')
 
 
     def ticker_litecoin(self):
-        """Return informations about Litecoin market."""
+        """Return information about Litecoin market."""
         return self.get_api('ticker_litecoin')
 
 
     def ticker_ripple(self):
-        """Return informations about Ripple market."""
+        """Return information about Ripple market."""
         return self.get_api('xrp/ticker')
 
 
     def orderbook_litecoin(self):
-        """Returns the Litecoin's orderbook."""
+        """Return Litecoin's orderbook."""
         return self.get_api('orderbook_litecoin')
 
 
     def trades_litecoin(self):
-        """Returns the operation list for the Litecoin market."""
+        """Return the operation list for the Litecoin market."""
         return self.get_api('trades_litecoin')
