@@ -21,22 +21,22 @@ class Api(Base):
 
     def ticker(self):
         """Return information about Bitcoin market."""
-        return self.get_api('ticker')
+        return self.get_api('btc/ticker')
 
 
     def orderbook(self):
         """Return Bitcoin's orderbook."""
-        return self.get_api('orderbook')
+        return self.get_api('btc/orderbook')
 
 
     def trades(self):
         """Return the operation list for the Bitcoin market."""
-        return self.get_api('trades')
+        return self.get_api('btc/trades')
 
 
     def ticker_litecoin(self):
         """Return information about Litecoin market."""
-        return self.get_api('ticker_litecoin')
+        return self.get_api('ltc/ticker')
 
 
     def ticker_ripple(self):
@@ -46,9 +46,9 @@ class Api(Base):
 
     def orderbook_litecoin(self):
         """Return Litecoin's orderbook."""
-        return self.get_api('orderbook_litecoin')
+        return self.get_api('ltc/orderbook')
 
 
     def trades_litecoin(self):
         """Return the operation list for the Litecoin market."""
-        return self.get_api('trades_litecoin')
+        return self.get_api('ltc/trades')
