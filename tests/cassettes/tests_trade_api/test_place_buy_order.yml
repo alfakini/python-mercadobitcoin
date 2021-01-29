@@ -1,43 +1,89 @@
 interactions:
 - request:
-    body: quantity=42.00&coin_pair=BRLBTC&tapi_method=place_buy_order&limit_price=5000&tapi_nonce=1479031421
+    body: tapi_method=place_buy_order&tapi_nonce=6207283101457706&coin_pair=BRLBTC&quantity=42.00&limit_price=5000
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['98']
-      Content-Type: [application/x-www-form-urlencoded]
-      TAPI-ID: "42"
-      TAPI-MAC: [42]
-      User-Agent: [python-requests/2.11.1]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '100'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      TAPI-ID:
+      - !!binary |
+        m58Mhl81TezUnu4eavzG9In7jnQWHNHzG9VsE5Cp82M=
+      TAPI-MAC:
+      - 0h6gq429w4s2bpmps9xij0o252iwyd7s39dtipd1seq5hsb294ijhp3x9t1utz5bm25202heh9f6nu0gecahzvi2od9xjgydkf2hw2a7f0rkdmmhp4ebw0secpnu9r8z
+      User-Agent:
+      - python-requests/2.25.1
     method: POST
     uri: https://www.mercadobitcoin.net/tapi/v3/
   response:
-    body: {string: '{"response_data": {"order": {"order_id": 1, "coin_pair":
-        "BRLBTC", "order_type": 1, "status": 2, "has_fills": false, "quantity": "42.0000000",
+    body:
+      string: '{"response_data": {"order": {"order_id": 1, "coin_pair": "BRLBTC",
+        "order_type": 1, "status": 2, "has_fills": false, "quantity": "42.00000000",
         "limit_price": "5000.00000", "executed_quantity": "0.00000000", "executed_price_avg":
         "0.00000", "fee": "0.00000000", "created_timestamp": "1479031422", "updated_timestamp":
         "1479031422", "operations": []}}, "status_code": 100, "server_unix_timestamp":
-        "1479031422"}'}
+        "1479031422"}'
     headers:
-      Connection: [keep-alive]
-      Content-Type: [application/json]
-      Date: ['Sun, 13 Nov 2016 18:23:42 GMT']
-      Server: [Apache]
-      Set-Cookie: ['visid_incap_619276=5E3GAj+aQ96l9IYYsFuhaq6vKFgAAAAAQUIPAAAAAAAtzUL/aZlRaJbSdUSYpc8q;
-          expires=Mon, 13 Nov 2017 13:43:41 GMT; path=/; Domain=.mercadobitcoin.net',
-        nlbi_619276=MCZec/Ird04WhObp+vqauAAAAAAUU01Avv1gxc0QMHzcpXzK; path=/; Domain=.mercadobitcoin.net,
-        incap_ses_468_619276=EznLK47AFiSIxuXOs6t+Bq6vKFgAAAAAKDOe7phVU8uiZeQpArd3Yw==;
-          path=/; Domain=.mercadobitcoin.net, ___utmvmKEulzpm=XtOTRkyIrDF; path=/;
-          Max-Age=900, "___utmvaKEulzpm=Twb\x01sDed; path=/; Max-Age=900", "___utmvbKEulzpm=IZn\r\
-          \n    XuYOnalz: qtv; path=/; Max-Age=900"]
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      Transfer-Encoding: [chunked]
-      Vary: [Cookie]
-      X-CDN: [Incapsula]
-      X-Frame-Options: [SAMEORIGIN]
-      X-Iinfo: [4-10986866-10986886 NNNN CT(94 191 0) RT(1479061421184 404) q(0 0
-          3 -1) r(10 10) U6]
-      content-length: ['416']
-    status: {code: 200, message: OK}
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - qya27zzt1ey6gl17-GRU
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' https: www.facebook.com www.google.com/recaptcha/
+        static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/ www.google-analytics.com/
+        www.gstatic.com/ www.googleadservices.com/pagead/ www.googleadservices.com/
+        script.hotjar.com/ *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/
+        bam.nr-data.net/; object-src ''unsafe-inline'' ''self'' https: www.facebook.com
+        www.google.com/recaptcha/ static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/
+        www.google-analytics.com/ www.gstatic.com/ www.googleadservices.com/ *.hotjar.com/
+        *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/ bam.nr-data.net/;
+        script-src ''unsafe-inline'' ''unsafe-eval'' ''self'' https: www.facebook.com
+        www.google.com/recaptcha/ static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/
+        www.google-analytics.com/ www.gstatic.com/ www.googleadservices.com/ script.hotjar.com/
+        *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/ bam.nr-data.net/;
+        img-src ''self'' data: https: *.mercadobitcoin.com.br *.mercadobitcoin.net
+        www.facebook.com stats.g.doubleclick.net www.google-analytics.com/ stats.g.doubleclick.net/
+        bam.nr-data.net/;'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 29 Jan 2021 00:42:42 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cfduid=1qz8v707n2k2s9x36e8f382fihxa3r8s4aupku108ly; expires=Sun, 28-Feb-21
+        00:42:42 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+        Secure
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Cookie
+      Via:
+      - kong/1.5.0.4-enterprise-edition
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      - SAMEORIGIN
+      X-Kong-Proxy-Latency:
+      - '0'
+      X-Kong-Upstream-Latency:
+      - '140'
+      cf-request-id:
+      - 0nw4jjv0u60000d6wpm5vlt000000001
+      content-length:
+      - '415'
+    status:
+      code: 200
+      message: OK
 version: 1
