@@ -98,6 +98,20 @@ class TradeApi(Base):
         return self.__check_response(self.__post_tapi("place_sell_order", kwargs ))
 
 
+    def place_market_buy_order(self, **kwargs):
+        """https://www.mercadobitcoin.com.br/trade-api/#place_market_buy_order"""
+
+        check_args(kwargs, { "coin_pair": self.available_pairs, "cost": str })
+        return self.__check_response(self.__post_tapi("place_market_buy_order", kwargs ))
+
+
+    def place_market_sell_order(self, **kwargs):
+        """https://www.mercadobitcoin.com.br/trade-api/#place_market_sell_order"""
+
+        check_args(kwargs, { "coin_pair": self.available_pairs, "quantity": str })
+        return self.__check_response(self.__post_tapi("place_market_sell_order", kwargs ))
+
+
     def cancel_order(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#cancel_order"""
 

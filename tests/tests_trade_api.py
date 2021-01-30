@@ -135,6 +135,18 @@ class TradeApiTestCase(unittest.TestCase):
 
 
     @tests.vcr.use_cassette
+    def test_place_market_buy_order(self):
+        response = self.api.place_market_buy_order(coin_pair="BRLBTC", cost="42.00")
+        assert_order_response(response)
+
+
+    @tests.vcr.use_cassette
+    def test_place_market_sell_order(self):
+        response = self.api.place_market_sell_order(coin_pair="BRLBTC", quantity="0.001")
+        assert_order_response(response)
+
+
+    @tests.vcr.use_cassette
     def test_cancel_order(self):
         response = self.api.cancel_order(coin_pair="BRLBTC", order_id=1)
         assert_order_response(response)
