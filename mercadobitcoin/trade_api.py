@@ -45,6 +45,7 @@ class TradeApi(Base):
         self.id = identifier
         self.secret = secret
         self.path = "/tapi/v3/"
+        self.withdrawable_coins = [ "BRL", "BCH", "BTC", "ETH", "LTC", "XRP" ]
         self.available_pairs = ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP", "BRLETH", "BRLUSDC", "BRLMBPRK01", "BRLMBPRK02", "BRLMBPRK03", "BRLMBPRK04", "BRLMBCONS01"]
         Base.__init__(self)
 
@@ -107,7 +108,7 @@ class TradeApi(Base):
     def get_withdrawal(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#get_withdrawal"""
 
-        check_args(kwargs, { "coin": self.available_pairs, "withdrawal_id": int })
+        check_args(kwargs, { "coin": self.withdrawable_coins, "withdrawal_id": int })
         return self.__check_response(self.__post_tapi("get_withdrawal", kwargs ))
 
 

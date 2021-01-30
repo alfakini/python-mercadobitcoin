@@ -21,6 +21,18 @@ def assert_order_response(response):
     assert "limit_price" in response["order"]
 
 
+def assert_withdrawal_response(response):
+    assert "withdrawal" in response
+    assert "id" in response["withdrawal"]
+    assert "coin" in response["withdrawal"]
+    assert "fee" in response["withdrawal"]
+    assert "status" in response["withdrawal"]
+    assert "description" in response["withdrawal"]
+    assert "created_timestamp" in response["withdrawal"]
+    assert "updated_timestamp" in response["withdrawal"]
+    assert "quantity" in response["withdrawal"]
+
+
 class TradeApiTestCase(unittest.TestCase):
     def setUp(self):
         self.api = mercadobitcoin.TradeApi(b"42", b"42")
@@ -126,6 +138,31 @@ class TradeApiTestCase(unittest.TestCase):
     def test_cancel_order(self):
         response = self.api.cancel_order(coin_pair="BRLBTC", order_id=1)
         assert_order_response(response)
+
+
+    @tests.vcr.use_cassette
+    def test_get_brl_withdrawal(self):
+        response = self.api.get_withdrawal(coin="BRL", withdrawal_id=42)
+        assert_withdrawal_response(response)
+        assert "net_quantity" in response["withdrawal"]
+        assert "account" in response["withdrawal"]
+
+
+    @tests.vcr.use_cassette
+    def test_get_crypto_withdrawal(self):
+        response = self.api.get_withdrawal(coin="BTC", withdrawal_id=42)
+        assert_withdrawal_response(response)
+        assert "address" in response["withdrawal"]
+        assert "tx" in response["withdrawal"]
+
+
+    # @tests.vcr.use_cassette
+    # def test_get_xrp_withdrawal(self):
+    #     response = self.api.get_withdrawal(coin="XRP", withdrawal_id=42)
+    #     assert_withdrawal_response(response)
+    #     assert "address" in response["withdrawal"]
+    #     assert "tx" in response["withdrawal"]
+    #     assert "destination_tag" in response["withdrawal"]
 
 
     @tests.vcr.use_cassette

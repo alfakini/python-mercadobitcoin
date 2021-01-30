@@ -1,0 +1,88 @@
+interactions:
+- request:
+    body: tapi_method=get_withdrawal&tapi_nonce=6207283101457706&coin=BTC&withdrawal_id=42
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '84'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      TAPI-ID:
+      - !!binary |
+        m58Mhl81TezUnu4eavzG9In7jnQWHNHzG9VsE5Cp82M=
+      TAPI-MAC:
+      - 0h6gq429w4s2bpmps9xij0o252iwyd7s39dtipd1seq5hsb294ijhp3x9t1utz5bm25202heh9f6nu0gecahzvi2od9xjgydkf2hw2a7f0rkdmmhp4ebw0secpnu9r8z
+      User-Agent:
+      - python-requests/2.25.1
+    method: POST
+    uri: https://www.mercadobitcoin.net/tapi/v3/
+  response:
+    body:
+      string: '{"response_data": {"withdrawal": {"id": 42, "coin": "BTC", "quantity":
+        "50.00000000", "fee": "0.00000000", "address": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
+        "description": "Satoshi", "status": 2, "tx": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+        "created_timestamp": "1231006505", "updated_timestamp": "1231006505"}}, "status_code":
+        100, "server_unix_timestamp": "1231006505"}'
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - qya27zzt1ey6gl17-GRU
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' https: www.facebook.com www.google.com/recaptcha/
+        static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/ www.google-analytics.com/
+        www.gstatic.com/ www.googleadservices.com/pagead/ www.googleadservices.com/
+        script.hotjar.com/ *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/
+        bam.nr-data.net/; object-src ''unsafe-inline'' ''self'' https: www.facebook.com
+        www.google.com/recaptcha/ static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/
+        www.google-analytics.com/ www.gstatic.com/ www.googleadservices.com/ *.hotjar.com/
+        *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/ bam.nr-data.net/;
+        script-src ''unsafe-inline'' ''unsafe-eval'' ''self'' https: www.facebook.com
+        www.google.com/recaptcha/ static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/
+        www.google-analytics.com/ www.gstatic.com/ www.googleadservices.com/ script.hotjar.com/
+        *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/ bam.nr-data.net/;
+        img-src ''self'' data: https: *.mercadobitcoin.com.br *.mercadobitcoin.net
+        www.facebook.com stats.g.doubleclick.net www.google-analytics.com/ stats.g.doubleclick.net/
+        bam.nr-data.net/;'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 29 Jan 2021 00:42:42 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cfduid=1qz8v707n2k2s9x36e8f382fihxa3r8s4aupku108ly; expires=Sun, 28-Feb-21
+        00:42:42 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+        Secure
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Cookie
+      Via:
+      - kong/1.5.0.4-enterprise-edition
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      - SAMEORIGIN
+      X-Kong-Proxy-Latency:
+      - '1'
+      X-Kong-Upstream-Latency:
+      - '28'
+      cf-request-id:
+      - 0nw4jjv0u60000d6wpm5vlt000000001
+      content-length:
+      - '419'
+    status:
+      code: 200
+      message: OK
+version: 1
