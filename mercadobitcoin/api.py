@@ -34,6 +34,11 @@ class Api(Base):
         return self.get_api('btc/trades')
 
 
+    def day_summary(self, year, month, day):
+        """Return a summary of the BTC trades for the specified date."""
+        return self.get_api('btc/day-summary/{}/{}/{}'.format(year, month, day))
+
+
     def ticker_litecoin(self):
         """Return information about Litecoin market."""
         return self.get_api('ltc/ticker')

@@ -43,6 +43,20 @@ class ApiTestCase(unittest.TestCase):
 
 
     @tests.vcr.use_cassette
+    def test_day_summary(self):
+        response = self.api.day_summary(2013, 6, 12)
+        assert 'date' in response
+        assert 'opening' in response
+        assert 'closing' in response
+        assert 'lowest' in response
+        assert 'highest' in response
+        assert 'volume' in response
+        assert 'quantity' in response
+        assert 'amount' in response
+        assert 'avg_price' in response
+
+
+    @tests.vcr.use_cassette
     def test_ticker_litecoin(self):
         response = self.api.ticker_litecoin()
         assert 'ticker' in response
