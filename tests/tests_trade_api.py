@@ -100,3 +100,21 @@ class TradeApiTestCase(unittest.TestCase):
     def test_cancel_order(self):
         response = self.api.cancel_order(coin_pair="BRLBTC", order_id=1)
         assert_order_response(response)
+
+
+    @tests.vcr.use_cassette
+    def test_withdraw_coin_brl_untrusted_account(self):
+        with self.assertRaises(ApiError):
+            self.api.withdraw_coin_brl(coin="BRL", quantity="4200.00", account_ref="1234567")
+
+
+    @tests.vcr.use_cassette
+    def test_withdraw_coin_untrusted_address(self):
+        with self.assertRaises(ApiError):
+            self.api.withdraw_coin(coin="BTC", quantity="9999999", address="random81XF3WPnLEXzSYh9yDrZqGKOzxxP", tx_fee=" 0.0004", description="Trasfering Crypto.")
+
+
+    @tests.vcr.use_cassette
+    def test_withdraw_coin_xrp_invalid_address(self):
+        with self.assertRaises(ApiError):
+            self.api.withdraw_coin_xrp(coin="XRP", quantity="42", address="1", tx_fee="0.01", destination_tag=123456789, description="Trasfering XRP.")
