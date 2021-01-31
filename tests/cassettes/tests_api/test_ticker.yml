@@ -2,80 +2,79 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      User-Agent: [python-requests/2.11.1]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.25.1
     method: GET
-    uri: https://www.mercadobitcoin.net/api/ticker
+    uri: https://www.mercadobitcoin.net/api/btc/ticker/
   response:
-    body: {string: ''}
+    body:
+      string: '{"ticker": {"high":"200000.00000000","low":"173333.33000000","vol":"654.90313698","last":"193205.27989000","buy":"193205.28708000","sell":"193999.99823000","open":"174749.01000000","date":1611942407}}'
     headers:
-      Connection: [keep-alive]
-      Content-Type: [text/html; charset=utf-8]
-      Date: ['Sun, 13 Nov 2016 17:14:05 GMT']
-      Location: ['http://www.mercadobitcoin.net/api/ticker/']
-      Server: [Apache]
-      Set-Cookie: ['visid_incap_619276=B9KivA22SUm1KJHPEtAyK12fKFgAAAAAQUIPAAAAAAAaLOQrj+ymj0U2ICRZLeql;
-          expires=Mon, 13 Nov 2017 13:43:41 GMT; path=/; Domain=.mercadobitcoin.net',
-        nlbi_619276=V7tbNU6KeVGxYwPQ+vqauAAAAAD+wGN9jnD2inHMuhzVYaWO; path=/; Domain=.mercadobitcoin.net,
-        incap_ses_468_619276=CE/iHPJSs00a6tnOs6t+Bl2fKFgAAAAAYyTKUd2lX9TbIwYSJcvhSA==;
-          path=/; Domain=.mercadobitcoin.net, ___utmvmKEulzpm=OOcZqrlUXuF; path=/;
-          Max-Age=900, "___utmvaKEulzpm=brN\x01xoVH; path=/; Max-Age=900", "___utmvbKEulzpm=oZs\r\
-          \n    XWCOzalD: OtG; path=/; Max-Age=900"]
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      Vary: [Accept-Encoding]
-      X-CDN: [Incapsula]
-      X-Frame-Options: [SAMEORIGIN]
-      X-Iinfo: [8-31739780-31739885 NNNN CT(91 92 0) RT(1479057244062 1030) q(0 0
-          2 -1) r(3 3) U11]
-      content-length: ['0']
-    status: {code: 301, message: MOVED PERMANENTLY}
-- request:
-    body: null
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Cookie: ["visid_incap_619276=B9KivA22SUm1KJHPEtAyK12fKFgAAAAAQUIPAAAAAAAaLOQrj+ymj0U2ICRZLeql;\
-          \ incap_ses_468_619276=CE/iHPJSs00a6tnOs6t+Bl2fKFgAAAAAYyTKUd2lX9TbIwYSJcvhSA==;\
-          \ nlbi_619276=V7tbNU6KeVGxYwPQ+vqauAAAAAD+wGN9jnD2inHMuhzVYaWO; ___utmvaKEulzpm=brN\x01\
-          xoVH; ___utmvmKEulzpm=OOcZqrlUXuF; ___utmvbKEulzpm=oZs\r\n    XWCOzalD:\
-          \ OtG"]
-      User-Agent: [python-requests/2.11.1]
-    method: GET
-    uri: http://www.mercadobitcoin.net/api/ticker/
-  response:
-    body: {string: ''}
-    headers:
-      Connection: [close]
-      Content-Length: ['0']
-      Location: ['https://www.mercadobitcoin.net/api/ticker/']
-    status: {code: 301, message: Moved Permanently}
-- request:
-    body: null
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Cookie: ["visid_incap_619276=B9KivA22SUm1KJHPEtAyK12fKFgAAAAAQUIPAAAAAAAaLOQrj+ymj0U2ICRZLeql;\
-          \ nlbi_619276=V7tbNU6KeVGxYwPQ+vqauAAAAAD+wGN9jnD2inHMuhzVYaWO; incap_ses_468_619276=CE/iHPJSs00a6tnOs6t+Bl2fKFgAAAAAYyTKUd2lX9TbIwYSJcvhSA==;\
-          \ ___utmvaKEulzpm=brN\x01xoVH; ___utmvmKEulzpm=OOcZqrlUXuF; ___utmvbKEulzpm=oZs\r\
-          \n    XWCOzalD: OtG"]
-      User-Agent: [python-requests/2.11.1]
-    method: GET
-    uri: https://www.mercadobitcoin.net/api/ticker/
-  response:
-    body: {string: '{"ticker":{"high":2500.00000000,"low":2436.99000000,"vol":85.31071886,"last":2467.00000000,"buy":2456.11322000,"sell":2467.00000000,"date":1479057195}}
-
-        '}
-    headers:
-      Content-Type: [text/html; charset=utf-8]
-      Date: ['Sun, 13 Nov 2016 17:14:06 GMT']
-      Etag: ['"e6633c87"']
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      X-CDN: [Incapsula]
-      X-Iinfo: [8-31739780-0 0CNN RT(1479057244062 2934) q(0 -1 -1 0) r(0 -1)]
-      content-length: ['152']
-    status: {code: 200, message: OK}
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 6194c64edf874cf1-GRU
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' https: www.facebook.com www.google.com/recaptcha/
+        static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/ www.google-analytics.com/
+        www.gstatic.com/ www.googleadservices.com/pagead/ www.googleadservices.com/
+        script.hotjar.com/ *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/
+        bam.nr-data.net/; object-src ''unsafe-inline'' ''self'' https: www.facebook.com
+        www.google.com/recaptcha/ static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/
+        www.google-analytics.com/ www.gstatic.com/ www.googleadservices.com/ *.hotjar.com/
+        *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/ bam.nr-data.net/;
+        script-src ''unsafe-inline'' ''unsafe-eval'' ''self'' https: www.facebook.com
+        www.google.com/recaptcha/ static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/
+        www.google-analytics.com/ www.gstatic.com/ www.googleadservices.com/ script.hotjar.com/
+        *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/ bam.nr-data.net/;
+        img-src ''self'' data: https: *.mercadobitcoin.com.br *.mercadobitcoin.net
+        www.facebook.com stats.g.doubleclick.net www.google-analytics.com/ stats.g.doubleclick.net/
+        bam.nr-data.net/;'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 29 Jan 2021 17:46:47 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cfduid=df2cafc2bbafa64eb17f49dd0c5b5530a1611942407; expires=Sun, 28-Feb-21
+        17:46:47 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+        Secure
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - kong/1.5.0.4-enterprise-edition
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Kong-Proxy-Latency:
+      - '0'
+      X-Kong-Upstream-Latency:
+      - '2'
+      cf-request-id:
+      - 07f0da454300004cf1b3907000000001
+      content-length:
+      - '200'
+    status:
+      code: 200
+      message: OK
 version: 1
