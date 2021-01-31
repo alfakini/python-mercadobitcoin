@@ -28,6 +28,8 @@ class ApiTestCase(unittest.TestCase):
         assert 'bids' in response
         assert len(response['asks']) > 0
         assert len(response['bids']) > 0
+        assert len(response['asks'][0]) == 2
+        assert len(response['bids'][0]) == 2
 
 
     @tests.vcr.use_cassette
@@ -60,6 +62,8 @@ class ApiTestCase(unittest.TestCase):
         assert 'bids' in response
         assert len(response['asks']) > 0
         assert len(response['bids']) > 0
+        assert len(response['asks'][0]) == 2
+        assert len(response['bids'][0]) == 2
 
 
     @tests.vcr.use_cassette
