@@ -53,7 +53,9 @@ mbtc.place_buy_order(coin_pair="BRLBTC", quantity="42.00", limit_price="5000")
 mbtc.place_sell_order(coin_pair="BRLBTC", quantity="42.00", limit_price="5000")
 mbtc.cancel_order(coin_pair="BRLBTC", order_id=1)
 mbtc.get_withdrawal(coin="BRL", withdrawal_id=1)
-mbtc.withdraw_coin(coin_pair="BRL", quantity="42", destiny="1", description="Trasfering Money.")
+mbtc.withdraw_coin_brl(coin="BRL", quantity="42", account_ref="1", description="Trasfering Money.")
+mbtc.withdraw_coin_xrp(coin="XRP", quantity="42", address="[address_dest]", tx_fee="[tx_fee_amount]", destination_tag="[tag_dest]", description="Trasfering XRP.")
+mbtc.withdraw_coin(coin="BTC", quantity="42", address="[address_dest]", tx_fee="[tx_fee_amount]", description="Trasfering Crypto.")
 ```
 
 ## Development
