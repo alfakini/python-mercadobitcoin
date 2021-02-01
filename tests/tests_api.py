@@ -3,6 +3,19 @@ import unittest
 import mercadobitcoin
 
 
+def assert_ticker_response(response):
+    assert 'ticker' in response
+    ticker_fields = {"high", "date", "sell", "vol", "last", "low", "buy"}
+    for field in ticker_fields:
+        assert field in response["ticker"]
+
+
+def assert_trades_response(response):
+    trade_fields = {"date", "price", "amount", "tid", "type"}
+    for field in trade_fields:
+        assert field in response[0]
+
+
 class ApiTestCase(unittest.TestCase):
     def setUp(self):
         self.api = mercadobitcoin.Api()
@@ -11,14 +24,7 @@ class ApiTestCase(unittest.TestCase):
     @tests.vcr.use_cassette
     def test_ticker(self):
         response = self.api.ticker()
-        assert 'ticker' in response
-        assert 'high' in response['ticker']
-        assert 'date' in response['ticker']
-        assert 'sell' in response['ticker']
-        assert 'vol' in response['ticker']
-        assert 'last' in response['ticker']
-        assert 'low' in response['ticker']
-        assert 'buy' in response['ticker']
+        assert_ticker_response(response)
 
 
     @tests.vcr.use_cassette
@@ -35,38 +41,21 @@ class ApiTestCase(unittest.TestCase):
     @tests.vcr.use_cassette
     def test_trades(self):
         response = self.api.trades()
-        assert 'date' in response[0]
-        assert 'price' in response[0]
-        assert 'amount' in response[0]
-        assert 'tid' in response[0]
-        assert 'type' in response[0]
-
+        assert_trades_response(response)
 
     @tests.vcr.use_cassette
     def test_day_summary(self):
         response = self.api.day_summary(2013, 6, 12)
-        assert 'date' in response
-        assert 'opening' in response
-        assert 'closing' in response
-        assert 'lowest' in response
-        assert 'highest' in response
-        assert 'volume' in response
-        assert 'quantity' in response
-        assert 'amount' in response
-        assert 'avg_price' in response
+        summary_fields = {"date", "opening", "closing", "lowest", "highest",
+                          "volume", "quantity", "amount", "avg_price"}
+        for field in summary_fields:
+            assert field in response
 
 
     @tests.vcr.use_cassette
     def test_ticker_litecoin(self):
         response = self.api.ticker_litecoin()
-        assert 'ticker' in response
-        assert 'high' in response['ticker']
-        assert 'date' in response['ticker']
-        assert 'sell' in response['ticker']
-        assert 'vol' in response['ticker']
-        assert 'last' in response['ticker']
-        assert 'low' in response['ticker']
-        assert 'buy' in response['ticker']
+        assert_ticker_response(response)
 
 
     @tests.vcr.use_cassette
@@ -83,9 +72,5 @@ class ApiTestCase(unittest.TestCase):
     @tests.vcr.use_cassette
     def test_trades_litecoin(self):
         response = self.api.trades_litecoin()
-        assert 'date' in response[0]
-        assert 'price' in response[0]
-        assert 'amount' in response[0]
-        assert 'tid' in response[0]
-        assert 'type' in response[0]
+        assert_trades_response(response)
 
