@@ -1,11 +1,11 @@
 import requests
 
+
 class Base(object):
     """Base API Class"""
 
     def __init__(self):
         self.host = "www.mercadobitcoin.net"
-
 
     def get_api(self, action):
         """Return api JSON for the requested action.
@@ -19,41 +19,34 @@ class Base(object):
 class Api(Base):
     """Market information for each cryptoasset."""
 
-    def ticker(self):
+    def ticker(self, coin='BTC'):
         """Return information about Bitcoin market."""
-        return self.get_api('btc/ticker')
+        return self.get_api('{}/ticker'.format(coin))
 
-
-    def orderbook(self):
+    def orderbook(self, coin='BTC'):
         """Return Bitcoin's orderbook."""
-        return self.get_api('btc/orderbook')
+        return self.get_api('{}/orderbook'.format(coin))
 
-
-    def trades(self):
+    def trades(self, coin='BTC'):
         """Return the operation list for the Bitcoin market."""
-        return self.get_api('btc/trades')
+        return self.get_api('{}/trades'.format(coin))
 
-
-    def day_summary(self, year, month, day):
+    def day_summary(self, year, month, day, coin='BTC'):
         """Return a summary of the BTC trades for the specified date."""
-        return self.get_api('btc/day-summary/{}/{}/{}'.format(year, month, day))
-
+        return self.get_api('{}/day-summary/{}/{}/{}'.format(coin, year, month, day))
 
     def ticker_litecoin(self):
         """Return information about Litecoin market."""
-        return self.get_api('ltc/ticker')
-
+        return self.ticker(coin='LTC')
 
     def ticker_ripple(self):
         """Return information about Ripple market."""
-        return self.get_api('xrp/ticker')
-
+        return self.ticker(coin='XRP')
 
     def orderbook_litecoin(self):
         """Return Litecoin's orderbook."""
-        return self.get_api('ltc/orderbook')
+        return self.orderbook(coin='LTC')
 
-
-    def trades_litecoin(self):
+    def trades_litecoin(self, coin='LTC'):
         """Return the operation list for the Litecoin market."""
-        return self.get_api('ltc/trades')
+        return self.trades(coin='LTC')

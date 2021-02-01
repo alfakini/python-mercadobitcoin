@@ -9,11 +9,24 @@ def assert_ticker_response(response):
     for field in ticker_fields:
         assert field in response["ticker"]
 
+def assert_orderbook_response(response):
+    assert 'asks' in response
+    assert 'bids' in response
+    assert len(response['asks']) > 0
+    assert len(response['bids']) > 0
+    assert len(response['asks'][0]) == 2
+    assert len(response['bids'][0]) == 2
 
 def assert_trades_response(response):
     trade_fields = {"date", "price", "amount", "tid", "type"}
     for field in trade_fields:
         assert field in response[0]
+
+def assert_summary_fields(response):
+    summary_fields = {"date", "opening", "closing", "lowest", "highest",
+                        "volume", "quantity", "amount", "avg_price"}
+    for field in summary_fields:
+        assert field in response
 
 
 class ApiTestCase(unittest.TestCase):
@@ -30,13 +43,12 @@ class ApiTestCase(unittest.TestCase):
     @tests.vcr.use_cassette
     def test_orderbook(self):
         response = self.api.orderbook()
-        assert 'asks' in response
-        assert 'bids' in response
-        assert len(response['asks']) > 0
-        assert len(response['bids']) > 0
-        assert len(response['asks'][0]) == 2
-        assert len(response['bids'][0]) == 2
+        assert_orderbook_response(response)
 
+    @tests.vcr.use_cassette
+    def test_orderbook_ethereum(self):
+        response = self.api.orderbook(coin='ETH')
+        assert_orderbook_response(response)
 
     @tests.vcr.use_cassette
     def test_trades(self):
@@ -44,13 +56,24 @@ class ApiTestCase(unittest.TestCase):
         assert_trades_response(response)
 
     @tests.vcr.use_cassette
+    def test_trades_ethereum(self):
+        response = self.api.trades(coin='ETH')
+        assert_trades_response(response)
+
+    @tests.vcr.use_cassette
+    def test_trades_litecoin(self):
+        response = self.api.trades_litecoin()
+        assert_trades_response(response)
+
+    @tests.vcr.use_cassette
     def test_day_summary(self):
         response = self.api.day_summary(2013, 6, 12)
-        summary_fields = {"date", "opening", "closing", "lowest", "highest",
-                          "volume", "quantity", "amount", "avg_price"}
-        for field in summary_fields:
-            assert field in response
+        assert_summary_fields(response)
 
+    @tests.vcr.use_cassette
+    def test_day_summary_litecoin(self):
+        response = self.api.day_summary(2013, 8, 23, coin='LTC')
+        assert_summary_fields(response)
 
     @tests.vcr.use_cassette
     def test_ticker_litecoin(self):
@@ -68,9 +91,4 @@ class ApiTestCase(unittest.TestCase):
         assert len(response['asks'][0]) == 2
         assert len(response['bids'][0]) == 2
 
-
-    @tests.vcr.use_cassette
-    def test_trades_litecoin(self):
-        response = self.api.trades_litecoin()
-        assert_trades_response(response)
 

@@ -11,10 +11,10 @@ interactions:
       User-Agent:
       - python-requests/2.25.1
     method: GET
-    uri: https://www.mercadobitcoin.net/api/BTC/ticker/
+    uri: https://www.mercadobitcoin.net/api/LTC/day-summary/2013/8/23/
   response:
     body:
-      string: '{"ticker": {"high":"188000.00000000","low":"178143.38597000","vol":"175.01434103","last":"184500.01000000","buy":"184500.00143000","sell":"184500.00990000","open":"180999.98915000","date":1612218041}}'
+      string: '{"date":"2013-08-23","opening":6.79,"closing":6.00024,"lowest":6.00024,"highest":30,"volume":2828.92469356,"quantity":351.10305478,"amount":93,"avg_price":8.05724887}'
     headers:
       Access-Control-Allow-Headers:
       - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
@@ -27,7 +27,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 61af0fa7fe2ff66f-GRU
+      - 61aebf4bcdb7f76c-GRU
       Connection:
       - keep-alive
       Content-Security-Policy:
@@ -49,14 +49,14 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 01 Feb 2021 22:20:41 GMT
+      - Mon, 01 Feb 2021 21:25:50 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Set-Cookie:
-      - __cfduid=d283be1b144fdf708a11513291a08d5001612218041; expires=Wed, 03-Mar-21
-        22:20:41 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+      - __cfduid=d90b6a738dc23e6f99856304735c036e31612214750; expires=Wed, 03-Mar-21
+        21:25:50 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
         Secure
       Transfer-Encoding:
       - chunked
@@ -69,11 +69,11 @@ interactions:
       X-Kong-Proxy-Latency:
       - '0'
       X-Kong-Upstream-Latency:
-      - '3'
+      - '22'
       cf-request-id:
-      - 0801481cfb0000f66f49237000000001
+      - 080115e3590000f76cf1312000000001
       content-length:
-      - '200'
+      - '166'
     status:
       code: 200
       message: OK

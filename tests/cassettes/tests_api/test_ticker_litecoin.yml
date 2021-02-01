@@ -11,10 +11,10 @@ interactions:
       User-Agent:
       - python-requests/2.25.1
     method: GET
-    uri: https://www.mercadobitcoin.net/api/ltc/ticker/
+    uri: https://www.mercadobitcoin.net/api/LTC/ticker/
   response:
     body:
-      string: '{"ticker": {"high":"762.99999000","low":"704.08213000","vol":"4237.19940620","last":"730.19970000","buy":"727.14006000","sell":"730.19970000","open":"704.92111000","date":1611942406}}'
+      string: '{"ticker": {"high":"741.25990000","low":"700.50000000","vol":"3759.09896129","last":"728.78999000","buy":"725.73231000","sell":"728.78000000","open":"708.98999000","date":1612219538}}'
     headers:
       Access-Control-Allow-Headers:
       - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
@@ -27,7 +27,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 6194c6507b28f774-GRU
+      - 61af3436bd634d15-GRU
       Connection:
       - keep-alive
       Content-Security-Policy:
@@ -49,14 +49,14 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jan 2021 17:46:47 GMT
+      - Mon, 01 Feb 2021 22:45:39 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Set-Cookie:
-      - __cfduid=dd7241dff04d61878f9d27d504d0acf501611942407; expires=Sun, 28-Feb-21
-        17:46:47 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+      - __cfduid=d34a3d5b349587deea070a1ae6f0c893a1612219539; expires=Wed, 03-Mar-21
+        22:45:39 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
         Secure
       Transfer-Encoding:
       - chunked
@@ -71,7 +71,7 @@ interactions:
       X-Kong-Upstream-Latency:
       - '2'
       cf-request-id:
-      - 07f0da464d0000f774071ec000000001
+      - 08015ef63300004d1557a7c000000001
       content-length:
       - '183'
     status:

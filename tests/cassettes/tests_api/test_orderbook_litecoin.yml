@@ -11,10 +11,10 @@ interactions:
       User-Agent:
       - python-requests/2.25.1
     method: GET
-    uri: https://www.mercadobitcoin.net/api/ltc/orderbook/
+    uri: https://www.mercadobitcoin.net/api/LTC/orderbook/
   response:
     body:
-      string: '{"asks":[[730.1997,0.19575204],[739.05911,1.94664129],[739.05912,0.68760147],[739.05914,1.54072192],[739.05933,19.71272286]],"bids":[[727.14006,0.20624636],[727.14005,0.3],[727.08004,6.2472],[727.08003,156.77],[727.08,0.00290201]],"timestamp":1611942406896213530}'
+      string: '{"asks":[[725.99998,0.4364828],[726,5.26402631],[726.5,0.1514],[726.99,0.03084512],[727,0.38059775]],"bids":[[725.1,0.42200639],[723.06,0.08263491],[720.64055,2.38148154],[720.64054,2.01070691],[720.64048,0.60269829]],"timestamp":1612217920192558006}'
     headers:
       Access-Control-Allow-Headers:
       - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
@@ -27,7 +27,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 6194c64ca90ed040-GRU
+      - 61af0cb60b464cdf-GRU
       Connection:
       - keep-alive
       Content-Security-Policy:
@@ -49,14 +49,14 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jan 2021 17:46:47 GMT
+      - Mon, 01 Feb 2021 22:18:41 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Set-Cookie:
-      - __cfduid=df6bfd1f87819a83241cdec28b80604781611942407; expires=Sun, 28-Feb-21
-        17:46:47 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+      - __cfduid=d47673061a6fdf63b076e801e3e42906d1612217920; expires=Wed, 03-Mar-21
+        22:18:40 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
         Secure
       Transfer-Encoding:
       - chunked
@@ -67,13 +67,13 @@ interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Kong-Proxy-Latency:
-      - '1'
+      - '0'
       X-Kong-Upstream-Latency:
-      - '15'
+      - '16'
       cf-request-id:
-      - 07f0da43e60000d0403a143000000001
+      - 08014645c100004cdf52319000000001
       content-length:
-      - '30690'
+      - '30993'
     status:
       code: 200
       message: OK

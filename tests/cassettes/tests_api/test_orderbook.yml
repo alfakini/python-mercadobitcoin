@@ -11,10 +11,10 @@ interactions:
       User-Agent:
       - python-requests/2.25.1
     method: GET
-    uri: https://www.mercadobitcoin.net/api/btc/orderbook/
+    uri: https://www.mercadobitcoin.net/api/BTC/orderbook/
   response:
     body:
-      string: '{"asks":[[193999.99824,0.00310537],[193999.99834,0.0787957],[193999.99835,0.00310537],[194000,0.01060439],[194000.98975,1.1674]],"bids":[[193205.28422,0.331909],[193205.27135,0.0811],[193205.03,0.00248746],[193205.02,0.00519432],[193205,0.00197505]],"timestamp":1611942406742748444}'
+      string: '{"asks":[[184500.00989,0.02124547],[184500.00999,0.4465],[184500.01,0.71225468],[184526.37,0.25827849],[184914.99999,2.2444]],"bids":[[184500,0.11848505],[184432.58,0.00059642],[184432.47,0.0002711],[184403.03,0.00110128],[184005.17004,0.08142612]],"timestamp":1612217297706725751}'
     headers:
       Access-Control-Allow-Headers:
       - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
@@ -27,7 +27,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 6194c64a3dc84d2a-GRU
+      - 61aefd7e9eae4d03-GRU
       Connection:
       - keep-alive
       Content-Security-Policy:
@@ -49,14 +49,14 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 29 Jan 2021 17:46:46 GMT
+      - Mon, 01 Feb 2021 22:08:17 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Set-Cookie:
-      - __cfduid=dfb78df260f9a4f098c7540a4fc4528441611942406; expires=Sun, 28-Feb-21
-        17:46:46 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+      - __cfduid=d6522c6f41ce2391f2e17c56dd5ebd7551612217297; expires=Wed, 03-Mar-21
+        22:08:17 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
         Secure
       Transfer-Encoding:
       - chunked
@@ -67,13 +67,13 @@ interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Kong-Proxy-Latency:
-      - '0'
+      - '1'
       X-Kong-Upstream-Latency:
       - '12'
       cf-request-id:
-      - 07f0da426100004d2ae505c000000001
+      - 08013cc32200004d0346114000000001
       content-length:
-      - '40209'
+      - '40456'
     status:
       code: 200
       message: OK
