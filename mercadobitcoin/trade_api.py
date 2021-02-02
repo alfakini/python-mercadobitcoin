@@ -18,8 +18,14 @@ class TradeApi(Base):
         self.id = identifier
         self.secret = secret
         self.path = "/tapi/v3/"
-        self.withdrawable_coins = [ "BRL", "BCH", "BTC", "ETH", "LTC", "XRP" ]
-        self.available_pairs = ["BRLBTC", "BRLLTC", "BRLBCH", "BRLXRP", "BRLETH", "BRLUSDC", "BRLMBPRK01", "BRLMBPRK02", "BRLMBPRK03", "BRLMBPRK04", "BRLMBCONS01"]
+        self.withdrawable_coins = ["BRL", "BCH", "BTC", "ETH", "LTC", "XRP"]
+        self.available_pairs = [
+            "BRLASRFT", "BRLATMFT", "BRLBCH", "BRLBTC", "BRLCAIFT", "BRLCHZ",
+            "BRLETH", "BRLGALFT", "BRLIMOB01", "BRLJUVFT", "BRLLINK", "BRLLTC",
+            "BRLMBCONS01", "BRLMBCONS02", "BRLMBFP01", "BRLMBPRK01",
+            "BRLMBPRK02", "BRLMBPRK03", "BRLMBPRK04", "BRLMBVASCO01",
+            "BRLPAXG", "BRLPSGFT", "BRLUSDC", "BRLWBX", "BRLXRP"
+        ]
         Base.__init__(self)
 
 
