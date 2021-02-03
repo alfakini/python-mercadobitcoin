@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: null
+    body: tapi_method=get_withdrawal&tapi_nonce=6207283101457706&coin=BTC&withdrawal_id=42
     headers:
       Accept:
       - '*/*'
@@ -8,26 +8,31 @@ interactions:
       - gzip, deflate
       Connection:
       - keep-alive
+      Content-Length:
+      - '84'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      TAPI-ID:
+      - !!binary |
+        m58Mhl81TezUnu4eavzG9In7jnQWHNHzG9VsE5Cp82M=
+      TAPI-MAC:
+      - 0h6gq429w4s2bpmps9xij0o252iwyd7s39dtipd1seq5hsb294ijhp3x9t1utz5bm25202heh9f6nu0gecahzvi2od9xjgydkf2hw2a7f0rkdmmhp4ebw0secpnu9r8z
       User-Agent:
       - python-requests/2.25.1
-    method: GET
-    uri: https://www.mercadobitcoin.net/api/BTC/ticker/
+    method: POST
+    uri: https://www.mercadobitcoin.net/tapi/v3/
   response:
     body:
-      string: '{"ticker": {"high":"188000.00000000","low":"178143.38597000","vol":"175.01434103","last":"184500.01000000","buy":"184500.00143000","sell":"184500.00990000","open":"180999.98915000","date":1612218041}}'
+      string: '{"response_data": {"withdrawal": {"id": 42, "coin": "BTC", "quantity":
+        "50.00000000", "fee": "0.00000000", "address": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
+        "description": "Satoshi", "status": 2, "tx": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+        "created_timestamp": "1231006505", "updated_timestamp": "1231006505"}}, "status_code":
+        100, "server_unix_timestamp": "1231006505"}'
     headers:
-      Access-Control-Allow-Headers:
-      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
-      Access-Control-Allow-Methods:
-      - GET
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - Content-Length,Content-Range
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 61af0fa7fe2ff66f-GRU
+      - qya27zzt1ey6gl17-GRU
       Connection:
       - keep-alive
       Content-Security-Policy:
@@ -47,33 +52,36 @@ interactions:
         www.facebook.com stats.g.doubleclick.net www.google-analytics.com/ stats.g.doubleclick.net/
         bam.nr-data.net/;'
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Mon, 01 Feb 2021 22:20:41 GMT
+      - Fri, 29 Jan 2021 00:42:42 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Set-Cookie:
-      - __cfduid=d283be1b144fdf708a11513291a08d5001612218041; expires=Wed, 03-Mar-21
-        22:20:41 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+      - __cfduid=1qz8v707n2k2s9x36e8f382fihxa3r8s4aupku108ly; expires=Sun, 28-Feb-21
+        00:42:42 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
         Secure
       Transfer-Encoding:
       - chunked
+      Vary:
+      - Cookie
       Via:
       - kong/1.5.0.4-enterprise-edition
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
+      - SAMEORIGIN
       X-Kong-Proxy-Latency:
-      - '0'
+      - '1'
       X-Kong-Upstream-Latency:
-      - '3'
+      - '28'
       cf-request-id:
-      - 0801481cfb0000f66f49237000000001
+      - 0nw4jjv0u60000d6wpm5vlt000000001
       content-length:
-      - '200'
+      - '419'
     status:
       code: 200
       message: OK

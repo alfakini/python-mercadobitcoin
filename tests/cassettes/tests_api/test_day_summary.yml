@@ -11,10 +11,10 @@ interactions:
       User-Agent:
       - python-requests/2.25.1
     method: GET
-    uri: https://www.mercadobitcoin.net/api/BTC/ticker/
+    uri: https://www.mercadobitcoin.net/api/BTC/day-summary/2013/6/12/
   response:
     body:
-      string: '{"ticker": {"high":"188000.00000000","low":"178143.38597000","vol":"175.01434103","last":"184500.01000000","buy":"184500.00143000","sell":"184500.00990000","open":"180999.98915000","date":1612218041}}'
+      string: '{"date":"2013-06-12","opening":249,"closing":265,"lowest":249,"highest":275,"volume":2799.69077767,"quantity":10.9169646,"amount":11,"avg_price":256.45322488}'
     headers:
       Access-Control-Allow-Headers:
       - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
@@ -27,7 +27,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 61af0fa7fe2ff66f-GRU
+      - 61aeb790ac194b23-GRU
       Connection:
       - keep-alive
       Content-Security-Policy:
@@ -49,14 +49,14 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 01 Feb 2021 22:20:41 GMT
+      - Mon, 01 Feb 2021 21:20:33 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Set-Cookie:
-      - __cfduid=d283be1b144fdf708a11513291a08d5001612218041; expires=Wed, 03-Mar-21
-        22:20:41 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+      - __cfduid=d81f6efc73c529e35aec9db651cf4455d1612214433; expires=Wed, 03-Mar-21
+        21:20:33 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
         Secure
       Transfer-Encoding:
       - chunked
@@ -67,13 +67,13 @@ interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Kong-Proxy-Latency:
-      - '0'
+      - '1'
       X-Kong-Upstream-Latency:
-      - '3'
+      - '2'
       cf-request-id:
-      - 0801481cfb0000f66f49237000000001
+      - 0801110e7a00004b2351386000000001
       content-length:
-      - '200'
+      - '158'
     status:
       code: 200
       message: OK

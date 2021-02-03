@@ -11,10 +11,10 @@ interactions:
       User-Agent:
       - python-requests/2.25.1
     method: GET
-    uri: https://www.mercadobitcoin.net/api/BTC/ticker/
+    uri: https://www.mercadobitcoin.net/api/ETH/orderbook/
   response:
     body:
-      string: '{"ticker": {"high":"188000.00000000","low":"178143.38597000","vol":"175.01434103","last":"184500.01000000","buy":"184500.00143000","sell":"184500.00990000","open":"180999.98915000","date":1612218041}}'
+      string: '{"asks":[[7433.08877,0.8911],[7433.08882,0.20230458],[7433.09,0.10088016],[7438,0.001],[7440,0.25002976]],"bids":[[7415.09042,0.8911],[7415.09038,0.40435945],[7415.09014,0.12],[7415.0901,33.3889007],[7415.09,0.15618421]],"timestamp":1612217555206953213}'
     headers:
       Access-Control-Allow-Headers:
       - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
@@ -27,7 +27,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 61af0fa7fe2ff66f-GRU
+      - 61af03c7ae58f760-GRU
       Connection:
       - keep-alive
       Content-Security-Policy:
@@ -49,14 +49,14 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 01 Feb 2021 22:20:41 GMT
+      - Mon, 01 Feb 2021 22:12:35 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Set-Cookie:
-      - __cfduid=d283be1b144fdf708a11513291a08d5001612218041; expires=Wed, 03-Mar-21
-        22:20:41 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+      - __cfduid=da69f9148ca0d624d88a408ab2958ad231612217555; expires=Wed, 03-Mar-21
+        22:12:35 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
         Secure
       Transfer-Encoding:
       - chunked
@@ -67,13 +67,13 @@ interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Kong-Proxy-Latency:
-      - '0'
+      - '1'
       X-Kong-Upstream-Latency:
-      - '3'
+      - '14'
       cf-request-id:
-      - 0801481cfb0000f66f49237000000001
+      - 080140b0c80000f760d9b3c000000001
       content-length:
-      - '200'
+      - '29309'
     status:
       code: 200
       message: OK

@@ -1,44 +1,115 @@
 interactions:
 - request:
-    body: tapi_method=get_account_info&tapi_nonce=1479058647
+    body: tapi_method=get_account_info&tapi_nonce=6207283101457706
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['50']
-      Content-Type: [application/x-www-form-urlencoded]
-      TAPI-ID: "42"
-      TAPI-MAC: [42]
-      User-Agent: [python-requests/2.11.1]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '56'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      TAPI-ID:
+      - !!binary |
+        m58Mhl81TezUnu4eavzG9In7jnQWHNHzG9VsE5Cp82M=
+      TAPI-MAC:
+      - 0h6gq429w4s2bpmps9xij0o252iwyd7s39dtipd1seq5hsb294ijhp3x9t1utz5bm25202heh9f6nu0gecahzvi2od9xjgydkf2hw2a7f0rkdmmhp4ebw0secpnu9r8z
+      User-Agent:
+      - python-requests/2.25.1
     method: POST
     uri: https://www.mercadobitcoin.net/tapi/v3/
   response:
-    body: {string: '{"response_data": {"balance": {"brl": {"available": "42.00000000",
-        "total": "42.00000000"}, "btc": {"available": "42.00000000", "total": "42.00000000",
-        "amount_open_orders": 1}, "ltc": {"available": "0.00000000", "total": "0.00000000",
-        "amount_open_orders": 0}}, "withdrawal_limits": {"brl": {"available": "20000.00",
-        "total": "20000.00"}, "btc": {"available": "42.00000000", "total": "42.00000000"},
-        "ltc": {"available": "500.00000000", "total": "500.00000000"}}}, "status_code":
-        100, "server_unix_timestamp": "1479058647"}'}
+    body:
+      string: '{"response_data": {"balance": {"brl": {"available": "42.00000", "total":
+        "42.00000"}, "btc": {"available": "42.00000000", "total": "42.00000000", "amount_open_orders":
+        1}, "ltc": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "bch": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "xrp": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "eth": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "asrft": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "atmft": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "caift": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "chz": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "galft": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "imob01": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "juvft": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "link": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "mbcons01": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "mbcons02": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "mbfp01": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "mbprk01": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "mbprk02": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "mbprk03": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "mbprk04": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "mbvasco01": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "paxg": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "psgft": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "usdc": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "wbx": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}}, "withdrawal_limits": {"brl": {"available": "20000.00", "total": "20000.00"},
+        "btc": {"available": "10.00000000", "total": "10.00000000"}, "ltc": {"available":
+        "500.00000000", "total": "500.00000000"}, "bch": {"available": "50.00000000",
+        "total": "50.00000000"}, "xrp": {"available": "20000.00000000", "total": "20000.00000000"},
+        "eth": {"available": "70.00000000", "total": "70.00000000"}}}, "status_code":
+        100, "server_unix_timestamp": "4350390860"}'
     headers:
-      Connection: [keep-alive]
-      Content-Type: [application/json]
-      Date: ['Sun, 13 Nov 2016 17:37:27 GMT']
-      Server: [Apache]
-      Set-Cookie: ['visid_incap_619276=7d6BdDw9S3mBErq9iJ41hdekKFgAAAAAQUIPAAAAAAAH/ViiNYhHLBKphvMVXpZK;
-          expires=Mon, 13 Nov 2017 13:43:25 GMT; path=/; Domain=.mercadobitcoin.net',
-        nlbi_619276=hCw5VpcwOV/rQsPs+vqauAAAAAAtb+lTpnB79ttbKbhvTHu+; path=/; Domain=.mercadobitcoin.net,
-        incap_ses_468_619276=9GF+Xg/tT1HK1t3Os6t+BtekKFgAAAAAOS0wh/qzWRHoOhoXnvafVQ==;
-          path=/; Domain=.mercadobitcoin.net, ___utmvmKEulzpm=QvOAwPKzcgN; path=/;
-          Max-Age=900, "___utmvaKEulzpm=YHg\x01uIlJ; path=/; Max-Age=900", "___utmvbKEulzpm=fZc\r\
-          \n    XgjOKalj: str; path=/; Max-Age=900"]
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      Transfer-Encoding: [chunked]
-      Vary: [Cookie]
-      X-CDN: [Incapsula]
-      X-Frame-Options: [SAMEORIGIN]
-      X-Iinfo: [10-46981234-46981335 NNNN CT(89 89 0) RT(1479058646678 622) q(0 0
-          1 -1) r(3 3) U6]
-      content-length: ['514']
-    status: {code: 200, message: OK}
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - qya27zzt1ey6gl17-GRU
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' https: www.facebook.com www.google.com/recaptcha/
+        static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/ www.google-analytics.com/
+        www.gstatic.com/ www.googleadservices.com/pagead/ www.googleadservices.com/
+        script.hotjar.com/ *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/
+        bam.nr-data.net/; object-src ''unsafe-inline'' ''self'' https: www.facebook.com
+        www.google.com/recaptcha/ static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/
+        www.google-analytics.com/ www.gstatic.com/ www.googleadservices.com/ *.hotjar.com/
+        *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/ bam.nr-data.net/;
+        script-src ''unsafe-inline'' ''unsafe-eval'' ''self'' https: www.facebook.com
+        www.google.com/recaptcha/ static.hotjar.com/ vars.hotjar.com/ www.gstatic.com/recaptcha/
+        www.google-analytics.com/ www.gstatic.com/ www.googleadservices.com/ script.hotjar.com/
+        *.mercadobitcoin.com.br *.mercadobitcoin.net stats.g.doubleclick.net/ bam.nr-data.net/;
+        img-src ''self'' data: https: *.mercadobitcoin.com.br *.mercadobitcoin.net
+        www.facebook.com stats.g.doubleclick.net www.google-analytics.com/ stats.g.doubleclick.net/
+        bam.nr-data.net/;'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 29 Jan 2021 00:42:42 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cfduid=1qz8v707n2k2s9x36e8f382fihxa3r8s4aupku108ly; expires=Sun, 28-Feb-21
+        00:42:42 GMT; path=/; domain=.mercadobitcoin.net; HttpOnly; SameSite=Lax;
+        Secure
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Cookie
+      Via:
+      - kong/1.5.0.4-enterprise-edition
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      - SAMEORIGIN
+      X-Kong-Proxy-Latency:
+      - '1'
+      X-Kong-Upstream-Latency:
+      - '145'
+      cf-request-id:
+      - 0nw4jjv0u60000d6wpm5vlt000000001
+      content-length:
+      - '2690'
+    status:
+      code: 200
+      message: OK
 version: 1

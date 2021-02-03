@@ -1,14 +1,14 @@
 import requests
 
+
 class Base(object):
     """Base API Class"""
 
     def __init__(self):
         self.host = "www.mercadobitcoin.net"
 
-
     def get_api(self, action):
-        """Returns api json for requested action.
+        """Return api JSON for the requested action.
 
         param action: The requested API action
         """
@@ -17,38 +17,36 @@ class Base(object):
 
 
 class Api(Base):
-    """Bitcoin and Litcoin market informations."""
+    """Market information for each cryptoasset."""
 
-    def ticker(self):
-        """Returns informations about Bitcoin market."""
-        return self.get_api('ticker')
+    def ticker(self, coin='BTC'):
+        """Return information about Bitcoin market."""
+        return self.get_api('{}/ticker'.format(coin))
 
+    def orderbook(self, coin='BTC'):
+        """Return Bitcoin's orderbook."""
+        return self.get_api('{}/orderbook'.format(coin))
 
-    def orderbook(self):
-        """Returns the Bitcoin's orderbook."""
-        return self.get_api('orderbook')
+    def trades(self, coin='BTC'):
+        """Return the operation list for the Bitcoin market."""
+        return self.get_api('{}/trades'.format(coin))
 
-
-    def trades(self):
-        """Returns the operation list for the Bitcoin market."""
-        return self.get_api('trades')
-
+    def day_summary(self, year, month, day, coin='BTC'):
+        """Return a summary of the BTC trades for the specified date."""
+        return self.get_api('{}/day-summary/{}/{}/{}'.format(coin, year, month, day))
 
     def ticker_litecoin(self):
-        """Return informations about Litcoin market."""
-        return self.get_api('ticker_litecoin')
-
+        """Return information about Litecoin market."""
+        return self.ticker(coin='LTC')
 
     def ticker_ripple(self):
-        """Return informations about Litcoin market."""
-        return self.get_api('xrp/ticker')
-
+        """Return information about Ripple market."""
+        return self.ticker(coin='XRP')
 
     def orderbook_litecoin(self):
-        """Returns the Litecoin's orderbook."""
-        return self.get_api('orderbook_litecoin')
+        """Return Litecoin's orderbook."""
+        return self.orderbook(coin='LTC')
 
-
-    def trades_litecoin(self):
-        """Returns the operation list for the Litcoin market."""
-        return self.get_api('trades_litecoin')
+    def trades_litecoin(self, coin='LTC'):
+        """Return the operation list for the Litecoin market."""
+        return self.trades(coin='LTC')

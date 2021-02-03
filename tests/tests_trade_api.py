@@ -6,19 +6,20 @@ from mercadobitcoin.errors import ApiError, ArgumentError
 
 def assert_order_response(response):
     assert "order" in response
-    assert "status" in response["order"]
-    assert "created_timestamp" in response["order"]
-    assert "updated_timestamp" in response["order"]
-    assert "coin_pair" in response["order"]
-    assert "has_fills" in response["order"]
-    assert "quantity" in response["order"]
-    assert "executed_quantity" in response["order"]
-    assert "order_id" in response["order"]
-    assert "operations" in response["order"]
-    assert "order_type" in response["order"]
-    assert "executed_price_avg" in response["order"]
-    assert "fee" in response["order"]
-    assert "limit_price" in response["order"]
+    order_fields = {"status", "created_timestamp", "updated_timestamp",
+                    "coin_pair", "has_fills", "quantity", "executed_quantity",
+                    "order_id", "operations", "order_type",
+                    "executed_price_avg", "fee", "limit_price"}
+    for field in order_fields:
+        assert field in response["order"]
+
+
+def assert_withdrawal_response(response):
+    assert "withdrawal" in response
+    withdrawal_fields = {"id", "coin", "fee", "status", "description",
+                         "created_timestamp", "updated_timestamp", "quantity"}
+    for field in withdrawal_fields:
+        assert field in response["withdrawal"]
 
 
 class TradeApiTestCase(unittest.TestCase):
@@ -36,13 +37,18 @@ class TradeApiTestCase(unittest.TestCase):
     def test_get_account_info(self):
         response = self.api.get_account_info()
         assert "balance" in response
-        assert "brl" in response["balance"]
-        assert "btc" in response["balance"]
-        assert "ltc" in response["balance"]
+        tradeable_coins = {"brl", "btc", "ltc", "bch", "xrp", "eth", "asrft",
+                           "atmft", "caift", "chz", "galft", "imob01", "juvft",
+                           "link", "mbcons01", "mbcons02", "mbfp01", "mbprk01",
+                           "mbprk02", "mbprk03", "mbprk04", "mbvasco01",
+                           "paxg", "psgft", "usdc", "wbx"}
+        for coin in tradeable_coins:
+            assert coin in response["balance"]
+
         assert "withdrawal_limits" in response
-        assert "brl" in response["withdrawal_limits"]
-        assert "btc" in response["withdrawal_limits"]
-        assert "ltc" in response["withdrawal_limits"]
+        withdrawable_coins = {"brl", "btc", "ltc", "bch", "xrp", "eth"}
+        for coin in withdrawable_coins:
+            assert coin in response["withdrawal_limits"]
 
 
     @tests.vcr.use_cassette
@@ -79,7 +85,7 @@ class TradeApiTestCase(unittest.TestCase):
 
 
     @tests.vcr.use_cassette
-    def test_place_buy_order_with_invalid_quatity(self):
+    def test_place_buy_order_with_invalid_quantity(self):
         with self.assertRaises(ArgumentError):
             self.api.place_buy_order(coin_pair="BRLBTC", quantity=1, limit_price="42")
 
@@ -97,9 +103,46 @@ class TradeApiTestCase(unittest.TestCase):
 
 
     @tests.vcr.use_cassette
+    def test_place_market_buy_order(self):
+        response = self.api.place_market_buy_order(coin_pair="BRLBTC", cost="42.00")
+        assert_order_response(response)
+
+
+    @tests.vcr.use_cassette
+    def test_place_market_sell_order(self):
+        response = self.api.place_market_sell_order(coin_pair="BRLBTC", quantity="0.001")
+        assert_order_response(response)
+
+
+    @tests.vcr.use_cassette
     def test_cancel_order(self):
         response = self.api.cancel_order(coin_pair="BRLBTC", order_id=1)
         assert_order_response(response)
+
+
+    @tests.vcr.use_cassette
+    def test_get_brl_withdrawal(self):
+        response = self.api.get_withdrawal(coin="BRL", withdrawal_id=42)
+        assert_withdrawal_response(response)
+        assert "net_quantity" in response["withdrawal"]
+        assert "account" in response["withdrawal"]
+
+
+    @tests.vcr.use_cassette
+    def test_get_crypto_withdrawal(self):
+        response = self.api.get_withdrawal(coin="BTC", withdrawal_id=42)
+        assert_withdrawal_response(response)
+        assert "address" in response["withdrawal"]
+        assert "tx" in response["withdrawal"]
+
+
+    # @tests.vcr.use_cassette
+    # def test_get_xrp_withdrawal(self):
+    #     response = self.api.get_withdrawal(coin="XRP", withdrawal_id=42)
+    #     assert_withdrawal_response(response)
+    #     assert "address" in response["withdrawal"]
+    #     assert "tx" in response["withdrawal"]
+    #     assert "destination_tag" in response["withdrawal"]
 
 
     @tests.vcr.use_cassette
