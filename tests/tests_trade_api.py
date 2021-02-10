@@ -41,7 +41,7 @@ class TradeApiTestCase(unittest.TestCase):
                            "atmft", "caift", "chz", "galft", "imob01", "juvft",
                            "link", "mbcons01", "mbcons02", "mbfp01", "mbprk01",
                            "mbprk02", "mbprk03", "mbprk04", "mbvasco01",
-                           "paxg", "psgft", "usdc", "wbx"}
+                           "mco2", "paxg", "psgft", "usdc", "wbx"}
         for coin in tradeable_coins:
             assert coin in response["balance"]
 

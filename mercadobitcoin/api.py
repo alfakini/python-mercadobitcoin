@@ -28,8 +28,8 @@ class Api(Base):
         self.available_coins = [
             "ASRFT", "ATMFT", "BCH", "BTC", "CAIFT", "CHZ", "ETH", "GALFT",
             "IMOB01", "JUVFT", "LINK", "LTC", "MBCONS01", "MBCONS02", "MBFP01",
-            "MBPRK01", "MBPRK02", "MBPRK03", "MBPRK04", "MBVASCO01", "PAXG",
-            "PSGFT", "USDC", "WBX", "XRP"
+            "MBPRK01", "MBPRK02", "MBPRK03", "MBPRK04", "MBVASCO01", "MCO2",
+            "PAXG", "PSGFT", "USDC", "WBX", "XRP"
         ]
         self.available_methods = [
             "ticker", "orderbook", "trades", "day-summary"
