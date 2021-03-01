@@ -1,5 +1,7 @@
 # mercadobitcoin
 
+DESPITE THIS PROJECT STILL BEING MAINTAINED, WE HIGHLY RECOMMEND THE [CCXT](https://github.com/ccxt/ccxt) LIBRARY.
+
 [![Join the chat at https://gitter.im/python-mercadobitcoin/Lobby](https://badges.gitter.im/python-mercadobitcoin/Lobby.svg)](https://gitter.im/python-mercadobitcoin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/alfakini/python-mercadobitcoin.svg?branch=master)](https://travis-ci.org/alfakini/python-mercadobitcoin)
 [![PyPI](https://img.shields.io/pypi/v/mercadobitcoin.svg)](https://pypi.python.org/pypi/mercadobitcoin)
