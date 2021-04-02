@@ -20,11 +20,12 @@ class TradeApi(Base):
         self.path = "/tapi/v3/"
         self.withdrawable_coins = ["BRL", "BCH", "BTC", "ETH", "LTC", "XRP"]
         self.available_pairs = [
-            "BRLASRFT", "BRLATMFT", "BRLBCH", "BRLBTC", "BRLCAIFT", "BRLCHZ",
-            "BRLETH", "BRLGALFT", "BRLIMOB01", "BRLJUVFT", "BRLLINK", "BRLLTC",
-            "BRLMBCONS01", "BRLMBCONS02", "BRLMBFP01", "BRLMBPRK01",
-            "BRLMBPRK02", "BRLMBPRK03", "BRLMBPRK04", "BRLMBVASCO01",
-            "BRLPAXG", "BRLPSGFT", "BRLUSDC", "BRLWBX", "BRLXRP"
+            "BRLACMFT", "BRLACORDO01", "BRLASRFT", "BRLATMFT", "BRLBCH",
+            "BRLBTC", "BRLCAIFT", "BRLCHZ", "BRLETH", "BRLGALFT", "BRLIMOB01",
+            "BRLJUVFT", "BRLLINK", "BRLLTC", "BRLMBCONS01", "BRLMBCONS02",
+            "BRLMBFP01", "BRLMBFP02", "BRLMBPRK01", "BRLMBPRK02", "BRLMBPRK03",
+            "BRLMBPRK04", "BRLMBVASCO01", "BRLMCO2", "BRLOGFT", "BRLPAXG",
+            "BRLPSGFT", "BRLUSDC", "BRLWBX", "BRLXRP"
         ]
         Base.__init__(self)
 
@@ -58,7 +59,7 @@ class TradeApi(Base):
 
     def list_orderbook(self, **kwargs):
         """https://www.mercadobitcoin.com.br/trade-api/#list_orderbook"""
-        
+
         check_args(kwargs, { "coin_pair": self.available_pairs }, { "full": [True, False] })
         return self.__check_response(self.__post_tapi("list_orderbook", kwargs ))
 
@@ -123,7 +124,7 @@ class TradeApi(Base):
         """https://www.mercadobitcoin.com.br/trade-api/#withdraw_coin"""
 
         check_args(kwargs, { "coin": ["XRP"], "quantity": str, "address": str, "tx_fee": str, "destination_tag": int }, { "description": str })
-        return self.__check_response(self.__post_tapi("withdraw_coin", kwargs ))        
+        return self.__check_response(self.__post_tapi("withdraw_coin", kwargs ))
 
 
     def __check_response(self, response):

@@ -37,18 +37,22 @@ class TradeApiTestCase(unittest.TestCase):
     def test_get_account_info(self):
         response = self.api.get_account_info()
         assert "balance" in response
-        tradeable_coins = {"brl", "btc", "ltc", "bch", "xrp", "eth", "asrft",
-                           "atmft", "caift", "chz", "galft", "imob01", "juvft",
-                           "link", "mbcons01", "mbcons02", "mbfp01", "mbprk01",
-                           "mbprk02", "mbprk03", "mbprk04", "mbvasco01",
-                           "paxg", "psgft", "usdc", "wbx"}
+        tradeable_coins = {"acmft", "acordo01", "asrft", "atmft", "bch", "brl",
+            "btc", "caift", "chz", "eth", "galft", "imob01", "juvft", "link",
+            "ltc", "mbcons01", "mbcons02", "mbfp01", "mbfp02", "mbprk01",
+            "mbprk02", "mbprk03", "mbprk04", "mbvasco01", "mco2", "ogft",
+            "paxg", "psgft", "usdc", "wbx", "xrp"}
         for coin in tradeable_coins:
             assert coin in response["balance"]
+        for coin in response["balance"]:
+            assert coin in tradeable_coins
 
         assert "withdrawal_limits" in response
         withdrawable_coins = {"brl", "btc", "ltc", "bch", "xrp", "eth"}
         for coin in withdrawable_coins:
             assert coin in response["withdrawal_limits"]
+        for coin in response["withdrawal_limits"]:
+            assert coin in withdrawable_coins
 
 
     @tests.vcr.use_cassette

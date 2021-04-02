@@ -29,6 +29,8 @@ interactions:
         0}, "bch": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "xrp": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "eth": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "acmft": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "acordo01": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "asrft": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "atmft": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "caift": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
@@ -40,11 +42,14 @@ interactions:
         0}, "mbcons01": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "mbcons02": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "mbfp01": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "mbfp02": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "mbprk01": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "mbprk02": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "mbprk03": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "mbprk04": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "mbvasco01": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "mco2": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
+        0}, "ogft": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "paxg": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "psgft": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
         0}, "usdc": {"available": "0.00000000", "total": "0.00000000", "amount_open_orders":
